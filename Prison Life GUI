@@ -1,0 +1,1387 @@
+-- Made by Simon ofc, if anything is wrong contact me here : Simonᵃˡᵗ#2473
+-- If the script was edited, i updated the gui
+-- If the script is too long, you can visite my website here and download with one click:
+-- https://link-hub.net/392827/website
+-- Have fun !
+
+local SGUI30 = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local TextLabel = Instance.new("TextLabel")
+local CMDX = Instance.new("TextButton")
+local INFYIELD = Instance.new("TextButton")
+local PLADMIN = Instance.new("TextButton")
+local PLGUI = Instance.new("TextButton")
+local PLSUPERPUNCH = Instance.new("TextButton")
+local PRINTHI = Instance.new("TextButton")
+local C00LGUI = Instance.new("TextButton")
+local DSBB = Instance.new("TextButton")
+local SGUI20 = Instance.new("TextButton")
+local CREDITS = Instance.new("TextButton")
+
+print("Made By Simon")
+
+SGUI30.Name = "S GUI 3.0"
+SGUI30.Parent = game.CoreGui
+
+Frame.Parent = SGUI30
+Frame.BackgroundColor3 = Color3.fromRGB(35, 39, 42)
+Frame.BorderColor3 = Color3.fromRGB(35, 39, 42)
+Frame.Position = UDim2.new(0.195918366, 0, 0.214756265, 0)
+Frame.Size = UDim2.new(0, 314, 0, 180)
+Frame.Active = true
+Frame.Draggable = true
+
+
+TextLabel.Parent = Frame
+TextLabel.BackgroundColor3 = Color3.fromRGB(44, 47, 51)
+TextLabel.Size = UDim2.new(0, 189, 0, 28)
+TextLabel.Font = Enum.Font.SourceSans
+TextLabel.Text = "S GUI 3.0 | MADE BY SIMON"
+TextLabel.TextColor3 = Color3.fromRGB(114, 137, 218)
+TextLabel.TextScaled = true
+TextLabel.TextSize = 14.000
+TextLabel.TextWrapped = true
+TextLabel.TextXAlignment = Enum.TextXAlignment.Left
+
+CMDX.Name = "CMD - X"
+CMDX.Parent = Frame
+CMDX.BackgroundColor3 = Color3.fromRGB(114, 137, 218)
+CMDX.BorderColor3 = Color3.fromRGB(255, 255, 255)
+CMDX.BorderSizePixel = 0
+CMDX.Position = UDim2.new(0.0318471342, 0, 0.222222209, 0)
+CMDX.Size = UDim2.new(0, 97, 0, 24)
+CMDX.Font = Enum.Font.SourceSans
+CMDX.Text = "CMD - X"
+CMDX.TextColor3 = Color3.fromRGB(0, 0, 0)
+CMDX.TextSize = 14.000
+CMDX.TextWrapped = true
+CMDX.MouseButton1Down:connect(function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/CMD-X/CMD-X/master/Source", true))()
+	print ("Keybinds = Q and U (CMD-X from S GUI 3.0)")
+end)
+
+INFYIELD.Name = "INF YIELD"
+INFYIELD.Parent = Frame
+INFYIELD.BackgroundColor3 = Color3.fromRGB(114, 137, 218)
+INFYIELD.BorderColor3 = Color3.fromRGB(255, 255, 255)
+INFYIELD.BorderSizePixel = 0
+INFYIELD.Position = UDim2.new(0.0318471342, 0, 0.400000006, 0)
+INFYIELD.Size = UDim2.new(0, 97, 0, 24)
+INFYIELD.Font = Enum.Font.SourceSans
+INFYIELD.Text = "INFINITE YIELD"
+INFYIELD.TextColor3 = Color3.fromRGB(0, 0, 0)
+INFYIELD.TextSize = 14.000
+INFYIELD.TextWrapped = true
+INFYIELD.MouseButton1Down:connect(function()
+	loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+end)
+
+PLADMIN.Name = "PLADMIN"
+PLADMIN.Parent = Frame
+PLADMIN.BackgroundColor3 = Color3.fromRGB(114, 137, 218)
+PLADMIN.BorderColor3 = Color3.fromRGB(255, 255, 255)
+PLADMIN.BorderSizePixel = 0
+PLADMIN.Position = UDim2.new(0.0318471342, 0, 0.583333313, 0)
+PLADMIN.Size = UDim2.new(0, 97, 0, 24)
+PLADMIN.Font = Enum.Font.SourceSans
+PLADMIN.Text = "PRISON LIFE ADMIN"
+PLADMIN.TextColor3 = Color3.fromRGB(0, 0, 0)
+PLADMIN.TextScaled = true
+PLADMIN.TextSize = 14.000
+PLADMIN.TextWrapped = true
+PLADMIN.MouseButton1Down:connect(function()
+	loadstring(game:HttpGet(('https://raw.githubusercontent.com/XTheMasterX/Scripts/Main/PrisonLife'),true))()
+
+end)
+
+PLGUI.Name = "PLGUI"
+PLGUI.Parent = Frame
+PLGUI.BackgroundColor3 = Color3.fromRGB(114, 137, 218)
+PLGUI.BorderColor3 = Color3.fromRGB(255, 255, 255)
+PLGUI.BorderSizePixel = 0
+PLGUI.Position = UDim2.new(0.0318471342, 0, 0.772222221, 0)
+PLGUI.Size = UDim2.new(0, 97, 0, 24)
+PLGUI.Font = Enum.Font.SourceSans
+PLGUI.Text = "PRISON LIFE GUI"
+PLGUI.TextColor3 = Color3.fromRGB(0, 0, 0)
+PLGUI.TextSize = 14.000
+PLGUI.TextWrapped = true
+PLGUI.MouseButton1Down:connect(function()
+	local ui = loadstring(game:HttpGet"https://pastebin.com/raw/deeWt6sx")()
+
+	local weapons = {"Remington 870", "M9", "Riot Shield","AK-47","M4A1"}
+
+	function setTeam(color)
+		local Remote = game.Workspace.Remote['TeamEvent']
+		local Arguments = {
+			[1] = color
+		}
+		Remote:FireServer(unpack(Arguments))
+	end
+
+	function punch(plrname)
+		local Remote = game.ReplicatedStorage['meleeEvent']
+		local Arguments = {
+			[1] = game.Players[plrname]
+		}
+		Remote:FireServer(unpack(Arguments))
+	end
+
+	function getGun(gun)
+		local Remote = game.Workspace.Remote['ItemHandler']
+		local Arguments = {
+			[1] = Workspace.Prison_ITEMS.giver[gun].ITEMPICKUP
+		}
+		Remote:InvokeServer(unpack(Arguments))
+	end
+
+	function getGuns()
+		local giver = workspace.Prison_ITEMS.giver
+		for i,v in pairs(weapons) do
+			if giver:FindFirstChild(v) then
+				getGun(v)
+			end
+		end
+	end
+
+	local player = ui:MakeWindow("Player");
+	local dropdown = player:addDropdown({"Select team","Guard","Neutral","Inmate"})
+	local killaura = player:addCheckbox("Killaura")
+
+	local fast = player:addCheckbox("Fast")
+	local highjump = player:addCheckbox("High jump")
+
+	local weapon = ui:MakeWindow("Weapon")
+
+	weapon:addButton("Get guns",function()
+		getGuns();
+	end)
+
+	local rapidfire = weapon:addCheckbox("Rapid fire")
+	local infammo = weapon:addCheckbox("Infinite ammo")
+
+	local world = ui:MakeWindow("World")
+	local doors = world:addCheckbox("Remove doors")
+	local fences = world:addCheckbox("Remove fences")
+
+	local latesttele = "none"
+
+	local teledropdown = world:addDropdown({"Teleport","Cafeteria","Criminal base","Prison gate", "Sewer","Gun place"})
+
+	local ez = Instance.new("Folder")
+	ez.Name = "nikodoors"
+	ez.Parent = game:service"ReplicatedStorage"
+
+	local ez = Instance.new("Folder")
+	ez.Name = "nikofences"
+	ez.Parent = game:service"ReplicatedStorage"
+
+
+	game:service"RunService".RenderStepped:connect(function()
+		if teledropdown.Selected.Value ~= latesttele then
+			local v = teledropdown.Selected.Value
+
+			if game.Players.LocalPlayer.Character then
+				if game.Players.LocalPlayer.Character:FindFirstChild"HumanoidRootPart" then
+					if v == "Gun place" then
+						game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(Vector3.new(828.222595, 99.9900055, 2257.802))
+					elseif v == "Prison gate" then
+						game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(Vector3.new(500.32901, 98.0399399, 2222.14478))
+					elseif v == "Cafeteria" then
+						game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(Vector3.new(929.020569, 99.9899597, 2285.35132))
+					elseif v == "Criminal base" then
+						game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(Vector3.new(-935.360474, 94.1287842, 2066.77319))
+					elseif v == "Sewer" then
+						game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(Vector3.new(914.87793, 78.7045288, 2411.79102))
+					end
+				end
+			end
+
+			latesttele = v;
+		end
+
+
+
+		if fast.Checked.Value then
+			game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 150
+		else
+			game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
+		end
+
+		if highjump.Checked.Value then
+			game.Players.LocalPlayer.Character.Humanoid.JumpPower = 150
+		else
+			game.Players.LocalPlayer.Character.Humanoid.JumpPower = 48
+		end
+
+		if killaura.Checked.Value then
+			for i,v in pairs(game.Players:GetPlayers()) do
+				if v.Character then
+					if v~=game.Players.LocalPlayer then
+						if v.Character:FindFirstChild"HumanoidRootPart" then
+							local m = (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - v.Character.HumanoidRootPart.Position).magnitude
+							if m<200 then
+								punch(v.Name)
+							end
+						end
+					end
+				end
+			end
+		end
+
+		for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+			if v:IsA"Tool" and v:FindFirstChild("GunStates") then
+				local gun = require(v.GunStates)
+				if rapidfire.Checked.Value then
+					gun.AutoFire = true;
+					gun.FireRate = 0.01
+				else
+					gun.AutoFire = false;
+					gun.FireRate = 0.08
+				end
+				if infammo.Checked.Value then
+					gun.CurrentAmmo = math.huge
+					gun.StoredAmmo = math.huge
+				else
+					gun.CurrentAmmo = 10;
+					gun.StoredAmmo = 100;
+				end
+			end
+		end
+
+		if fences.Checked.Value then
+			for i,v in pairs(workspace.Prison_Fences:GetChildren()) do
+				v.Parent = game:service"ReplicatedStorage".nikofences
+			end
+		else
+			for i,v in pairs(game:service"ReplicatedStorage".nikofences:GetChildren()) do
+				v.Parent = workspace.Prison_Fences
+			end
+		end
+
+		if doors.Checked.Value then
+			for i,v in pairs(workspace.Doors:GetChildren()) do
+				v.Parent = game:service"ReplicatedStorage".nikodoors
+			end
+		else
+			for i,v in pairs(game:service"ReplicatedStorage".nikodoors:GetChildren()) do
+				v.Parent = workspace.Doors
+			end
+		end
+
+		for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+			if v:IsA"Tool" and v:FindFirstChild("GunStates") then
+				local gun = require(v.GunStates)
+				if rapidfire.Checked.Value then
+					gun.AutoFire = true;
+					gun.FireRate = 0.01
+				else
+					gun.AutoFire = false;
+					gun.FireRate = 0.08
+				end
+				if infammo.Checked.Value then
+					gun.CurrentAmmo = math.huge
+					gun.StoredAmmo = math.huge
+				else
+					gun.CurrentAmmo = 10;
+					gun.StoredAmmo = 100;
+				end
+			end
+		end
+	end)
+
+	while(true) do
+		wait()
+		if dropdown.Selected.Value == "Guard" then
+			setTeam("Bright blue")
+		elseif dropdown.Selected.Value == "Neutral" then
+			setTeam("Medium stone grey")
+		elseif dropdown.Selected.Value == "Inmate" then
+			setTeam("Bright orange")
+		end
+
+	end
+end)
+
+PLSUPERPUNCH.Name = "PLSUPERPUNCH"
+PLSUPERPUNCH.Parent = Frame
+PLSUPERPUNCH.BackgroundColor3 = Color3.fromRGB(114, 137, 218)
+PLSUPERPUNCH.BorderColor3 = Color3.fromRGB(255, 255, 255)
+PLSUPERPUNCH.BorderSizePixel = 0
+PLSUPERPUNCH.Position = UDim2.new(0.391719759, 0, 0.222222209, 0)
+PLSUPERPUNCH.Size = UDim2.new(0, 97, 0, 24)
+PLSUPERPUNCH.Font = Enum.Font.SourceSans
+PLSUPERPUNCH.Text = "PRISON LIFE KILL PUNCH"
+PLSUPERPUNCH.TextColor3 = Color3.fromRGB(0, 0, 0)
+PLSUPERPUNCH.TextScaled = true
+PLSUPERPUNCH.TextSize = 14.000
+PLSUPERPUNCH.TextWrapped = true
+PLSUPERPUNCH.MouseButton1Down:connect(function()
+	mainRemotes = game.ReplicatedStorage
+	meleeRemote = mainRemotes['meleeEvent']
+	mouse = game.Players.LocalPlayer:GetMouse()
+	punching = false
+	cooldown = false
+
+	function punch()
+		cooldown = true
+		local part = Instance.new("Part", game.Players.LocalPlayer.Character)
+		part.Transparency = 1
+		part.Size = Vector3.new(5, 2, 3)
+		part.CanCollide = false
+		local w1 = Instance.new("Weld", part)
+		w1.Part0 = game.Players.LocalPlayer.Character.Torso
+		w1.Part1 = part
+		w1.C1 = CFrame.new(0,0,2)
+		part.Touched:connect(function(hit)
+			if game.Players:FindFirstChild(hit.Parent.Name) then
+				local plr = game.Players:FindFirstChild(hit.Parent.Name) 
+				if plr.Name ~= game.Players.LocalPlayer.Name then
+					part:Destroy()
+
+					for i = 1,100 do
+						meleeRemote:FireServer(plr)
+					end
+				end
+			end
+		end)
+
+		wait(1)
+		cooldown = false
+		part:Destroy()
+	end
+
+
+	mouse.KeyDown:connect(function(key)
+		if cooldown == false then
+			if key:lower() == "f" then
+
+				punch()
+
+			end
+		end
+	end)
+end)
+
+PRINTHI.Name = "PRINT \"HI\""
+PRINTHI.Parent = Frame
+PRINTHI.BackgroundColor3 = Color3.fromRGB(114, 137, 218)
+PRINTHI.BorderColor3 = Color3.fromRGB(255, 255, 255)
+PRINTHI.BorderSizePixel = 0
+PRINTHI.Position = UDim2.new(0.391719759, 0, 0.399999976, 0)
+PRINTHI.Size = UDim2.new(0, 97, 0, 24)
+PRINTHI.Font = Enum.Font.SourceSans
+PRINTHI.Text = "PRINT \"HI\""
+PRINTHI.TextColor3 = Color3.fromRGB(0, 0, 0)
+PRINTHI.TextSize = 14.000
+PRINTHI.TextWrapped = true
+PRINTHI.MouseButton1Down:connect(function()
+	print("hi")
+end)
+
+C00LGUI.Name = "C00LGUI"
+C00LGUI.Parent = Frame
+C00LGUI.BackgroundColor3 = Color3.fromRGB(114, 137, 218)
+C00LGUI.BorderColor3 = Color3.fromRGB(255, 255, 255)
+C00LGUI.BorderSizePixel = 0
+C00LGUI.Position = UDim2.new(0.391719759, 0, 0.583333313, 0)
+C00LGUI.Size = UDim2.new(0, 97, 0, 24)
+C00LGUI.Font = Enum.Font.SourceSans
+C00LGUI.Text = "C00LGUI (FE)"
+C00LGUI.TextColor3 = Color3.fromRGB(0, 0, 0)
+C00LGUI.TextSize = 14.000
+C00LGUI.TextWrapped = true
+C00LGUI.MouseButton1Down:connect(function()
+	loadstring(game:GetObjects("rbxassetid://8127297852")[1].Source)()
+end)
+
+DSBB.Name = "DSBB"
+DSBB.Parent = Frame
+DSBB.BackgroundColor3 = Color3.fromRGB(114, 137, 218)
+DSBB.BorderColor3 = Color3.fromRGB(255, 255, 255)
+DSBB.BorderSizePixel = 0
+DSBB.Position = UDim2.new(0.391719759, 0, 0.772222221, 0)
+DSBB.Size = UDim2.new(0, 97, 0, 24)
+DSBB.Font = Enum.Font.SourceSans
+DSBB.Text = "DOOMSPIRE BRICKBATTLE GUI"
+DSBB.TextColor3 = Color3.fromRGB(0, 0, 0)
+DSBB.TextScaled = true
+DSBB.TextSize = 14.000
+DSBB.TextWrapped = true
+DSBB.MouseButton1Down:connect(function()
+	-- Instances:
+	local doomspiregui = Instance.new("ScreenGui")
+	local MainFrame = Instance.new("Frame")
+	local title = Instance.new("TextLabel")
+	local teleportsTab = Instance.new("Frame")
+	local red = Instance.new("TextLabel")
+	local blue = Instance.new("TextLabel")
+	local yellow = Instance.new("TextLabel")
+	local green = Instance.new("TextLabel")
+	local redtop = Instance.new("TextButton")
+	local bluetop = Instance.new("TextButton")
+	local yellowtop = Instance.new("TextButton")
+	local greentop = Instance.new("TextButton")
+	local redbottom = Instance.new("TextButton")
+	local bluebottom = Instance.new("TextButton")
+	local yellowbottom = Instance.new("TextButton")
+	local greenbottom = Instance.new("TextButton")
+	local functionsTab = Instance.new("Frame")
+	local sling = Instance.new("TextButton")
+	local sling2 = Instance.new("TextButton")
+	local AutoRocket = Instance.new("TextButton")
+	local reach = Instance.new("TextButton")
+	local CreditsTab = Instance.new("Frame")
+	local creds1 = Instance.new("TextLabel")
+	local creds2 = Instance.new("TextLabel")
+	local creds3 = Instance.new("TextLabel")
+	local teleportsTabButton = Instance.new("TextButton")
+	local FunctionsTabButton = Instance.new("TextButton")
+	local CreditsTabButton = Instance.new("TextButton")
+	local openclose = Instance.new("TextButton")
+	--Properties:
+	doomspiregui.Name = "doomspiregui"
+	doomspiregui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+
+	MainFrame.Name = "MainFrame"
+	MainFrame.Parent = doomspiregui
+	MainFrame.BackgroundColor3 = Color3.new(0.196078, 0.196078, 0.196078)
+	MainFrame.BackgroundTransparency = 0.15000000596046
+	MainFrame.BorderColor3 = Color3.new(0, 0, 0)
+	MainFrame.BorderSizePixel = 3
+	MainFrame.Position = UDim2.new(0.241815418, 0, 0.266321301, 0)
+	MainFrame.Size = UDim2.new(0, 393, 0, 236)
+
+	title.Name = "title"
+	title.Parent = MainFrame
+	title.BackgroundColor3 = Color3.new(0.666667, 0.333333, 1)
+	title.BorderColor3 = Color3.new(0, 0, 0)
+	title.BorderSizePixel = 3
+	title.Size = UDim2.new(0, 310, 0, 58)
+	title.Font = Enum.Font.Cartoon
+	title.Text = "Doomspire Wrecker"
+	title.TextColor3 = Color3.new(0, 0, 0)
+	title.TextScaled = true
+	title.TextSize = 14
+	title.TextWrapped = true
+
+	teleportsTab.Name = "teleportsTab"
+	teleportsTab.Parent = MainFrame
+	teleportsTab.BackgroundColor3 = Color3.new(0.196078, 0.196078, 0.196078)
+	teleportsTab.BorderColor3 = Color3.new(0, 0, 0)
+	teleportsTab.BorderSizePixel = 3
+	teleportsTab.Position = UDim2.new(0, 0, 0.245762706, 0)
+	teleportsTab.Size = UDim2.new(0, 310, 0, 178)
+
+	red.Name = "red"
+	red.Parent = teleportsTab
+	red.BackgroundColor3 = Color3.new(1, 0, 0)
+	red.BorderColor3 = Color3.new(0, 0, 0)
+	red.Size = UDim2.new(0, 77, 0, 49)
+	red.Font = Enum.Font.Cartoon
+	red.Text = "Red"
+	red.TextColor3 = Color3.new(0, 0, 0)
+	red.TextScaled = true
+	red.TextSize = 14
+	red.TextWrapped = true
+
+	blue.Name = "blue"
+	blue.Parent = teleportsTab
+	blue.BackgroundColor3 = Color3.new(0, 0, 1)
+	blue.Position = UDim2.new(0.248387098, 0, 0, 0)
+	blue.Size = UDim2.new(0, 77, 0, 49)
+	blue.Font = Enum.Font.Cartoon
+	blue.Text = "Blue"
+	blue.TextColor3 = Color3.new(0, 0, 0)
+	blue.TextScaled = true
+	blue.TextSize = 14
+	blue.TextWrapped = true
+
+	yellow.Name = "yellow"
+	yellow.Parent = teleportsTab
+	yellow.BackgroundColor3 = Color3.new(1, 1, 0)
+	yellow.Position = UDim2.new(0.496774197, 0, 0, 0)
+	yellow.Size = UDim2.new(0, 77, 0, 49)
+	yellow.Font = Enum.Font.Cartoon
+	yellow.Text = "Yellow"
+	yellow.TextColor3 = Color3.new(0, 0, 0)
+	yellow.TextScaled = true
+	yellow.TextSize = 14
+	yellow.TextWrapped = true
+
+	green.Name = "green"
+	green.Parent = teleportsTab
+	green.BackgroundColor3 = Color3.new(0.333333, 1, 0)
+	green.Position = UDim2.new(0.745161295, 0, 0, 0)
+	green.Size = UDim2.new(0, 79, 0, 49)
+	green.Font = Enum.Font.Cartoon
+	green.Text = "Green"
+	green.TextColor3 = Color3.new(0, 0, 0)
+	green.TextScaled = true
+	green.TextSize = 14
+	green.TextWrapped = true
+
+	redtop.Name = "redtop"
+	redtop.Parent = teleportsTab
+	redtop.BackgroundColor3 = Color3.new(0.282353, 0.282353, 0.282353)
+	redtop.BorderColor3 = Color3.new(0, 0, 0)
+	redtop.BorderSizePixel = 2
+	redtop.Position = UDim2.new(0.0354838707, 0, 0.331460685, 0)
+	redtop.Size = UDim2.new(0, 55, 0, 32)
+	redtop.Font = Enum.Font.Cartoon
+	redtop.Text = "Top"
+	redtop.TextColor3 = Color3.new(1, 1, 1)
+	redtop.TextSize = 14
+
+	bluetop.Name = "bluetop"
+	bluetop.Parent = teleportsTab
+	bluetop.BackgroundColor3 = Color3.new(0.282353, 0.282353, 0.282353)
+	bluetop.BorderColor3 = Color3.new(0, 0, 0)
+	bluetop.BorderSizePixel = 2
+	bluetop.Position = UDim2.new(0.283870965, 0, 0.331460685, 0)
+	bluetop.Size = UDim2.new(0, 55, 0, 32)
+	bluetop.Font = Enum.Font.Cartoon
+	bluetop.Text = "Top"
+	bluetop.TextColor3 = Color3.new(1, 1, 1)
+	bluetop.TextSize = 14
+
+	yellowtop.Name = "yellowtop"
+	yellowtop.Parent = teleportsTab
+	yellowtop.BackgroundColor3 = Color3.new(0.282353, 0.282353, 0.282353)
+	yellowtop.BorderColor3 = Color3.new(0, 0, 0)
+	yellowtop.BorderSizePixel = 2
+	yellowtop.Position = UDim2.new(0.532258093, 0, 0.331460685, 0)
+	yellowtop.Size = UDim2.new(0, 55, 0, 32)
+	yellowtop.Font = Enum.Font.Cartoon
+	yellowtop.Text = "Top"
+	yellowtop.TextColor3 = Color3.new(1, 1, 1)
+	yellowtop.TextSize = 14
+
+	greentop.Name = "greentop"
+	greentop.Parent = teleportsTab
+	greentop.BackgroundColor3 = Color3.new(0.282353, 0.282353, 0.282353)
+	greentop.BorderColor3 = Color3.new(0, 0, 0)
+	greentop.BorderSizePixel = 2
+	greentop.Position = UDim2.new(0.783870995, 0, 0.331460685, 0)
+	greentop.Size = UDim2.new(0, 55, 0, 32)
+	greentop.Font = Enum.Font.Cartoon
+	greentop.Text = "Top"
+	greentop.TextColor3 = Color3.new(1, 1, 1)
+	greentop.TextSize = 14
+
+	redbottom.Name = "redbottom"
+	redbottom.Parent = teleportsTab
+	redbottom.BackgroundColor3 = Color3.new(0.282353, 0.282353, 0.282353)
+	redbottom.BorderColor3 = Color3.new(0, 0, 0)
+	redbottom.BorderSizePixel = 2
+	redbottom.Position = UDim2.new(0.0354838707, 0, 0.646067441, 0)
+	redbottom.Size = UDim2.new(0, 55, 0, 32)
+	redbottom.Font = Enum.Font.Cartoon
+	redbottom.Text = "Bottom"
+	redbottom.TextColor3 = Color3.new(1, 1, 1)
+	redbottom.TextSize = 14
+
+	bluebottom.Name = "bluebottom"
+	bluebottom.Parent = teleportsTab
+	bluebottom.BackgroundColor3 = Color3.new(0.282353, 0.282353, 0.282353)
+	bluebottom.BorderColor3 = Color3.new(0, 0, 0)
+	bluebottom.BorderSizePixel = 2
+	bluebottom.Position = UDim2.new(0.283870965, 0, 0.646067441, 0)
+	bluebottom.Size = UDim2.new(0, 55, 0, 32)
+	bluebottom.Font = Enum.Font.Cartoon
+	bluebottom.Text = "Bottom"
+	bluebottom.TextColor3 = Color3.new(1, 1, 1)
+	bluebottom.TextSize = 14
+
+	yellowbottom.Name = "yellowbottom"
+	yellowbottom.Parent = teleportsTab
+	yellowbottom.BackgroundColor3 = Color3.new(0.282353, 0.282353, 0.282353)
+	yellowbottom.BorderColor3 = Color3.new(0, 0, 0)
+	yellowbottom.BorderSizePixel = 2
+	yellowbottom.Position = UDim2.new(0.532258093, 0, 0.646067441, 0)
+	yellowbottom.Size = UDim2.new(0, 55, 0, 32)
+	yellowbottom.Font = Enum.Font.Cartoon
+	yellowbottom.Text = "Bottom"
+	yellowbottom.TextColor3 = Color3.new(1, 1, 1)
+	yellowbottom.TextSize = 14
+
+	greenbottom.Name = "greenbottom"
+	greenbottom.Parent = teleportsTab
+	greenbottom.BackgroundColor3 = Color3.new(0.282353, 0.282353, 0.282353)
+	greenbottom.BorderColor3 = Color3.new(0, 0, 0)
+	greenbottom.BorderSizePixel = 2
+	greenbottom.Position = UDim2.new(0.783870995, 0, 0.646067441, 0)
+	greenbottom.Size = UDim2.new(0, 55, 0, 32)
+	greenbottom.Font = Enum.Font.Cartoon
+	greenbottom.Text = "Bottom"
+	greenbottom.TextColor3 = Color3.new(1, 1, 1)
+	greenbottom.TextSize = 14
+
+	functionsTab.Name = "functionsTab"
+	functionsTab.Parent = MainFrame
+	functionsTab.BackgroundColor3 = Color3.new(0.196078, 0.196078, 0.196078)
+	functionsTab.BorderColor3 = Color3.new(0, 0, 0)
+	functionsTab.Position = UDim2.new(0, 0, 0.245762706, 0)
+	functionsTab.Size = UDim2.new(0, 310, 0, 178)
+
+	sling.Name = "sling"
+	sling.Parent = functionsTab
+	sling.BackgroundColor3 = Color3.new(0.407843, 0.407843, 0.407843)
+	sling.BorderColor3 = Color3.new(0, 0, 0)
+	sling.Position = UDim2.new(0.0354838707, 0, 0.0505617969, 0)
+	sling.Size = UDim2.new(0, 77, 0, 30)
+	sling.Font = Enum.Font.Cartoon
+	sling.Text = "Fast Slingshot  [X]"
+	sling.TextColor3 = Color3.new(1, 1, 1)
+	sling.TextScaled = true
+	sling.TextSize = 14
+	sling.TextWrapped = true
+
+	sling2.Name = "sling2"
+	sling2.Parent = functionsTab
+	sling2.BackgroundColor3 = Color3.new(0.407843, 0.407843, 0.407843)
+	sling2.BorderColor3 = Color3.new(0, 0, 0)
+	sling2.Position = UDim2.new(0.377419353, 0, 0.0505617969, 0)
+	sling2.Size = UDim2.new(0, 77, 0, 30)
+	sling2.Font = Enum.Font.Cartoon
+	sling2.Text = "Slingshot Headshots [X]"
+	sling2.TextColor3 = Color3.new(1, 1, 1)
+	sling2.TextScaled = true
+	sling2.TextSize = 14
+	sling2.TextWrapped = true
+
+	AutoRocket.Name = "AutoRocket"
+	AutoRocket.Parent = functionsTab
+	AutoRocket.BackgroundColor3 = Color3.new(0.407843, 0.407843, 0.407843)
+	AutoRocket.BorderColor3 = Color3.new(0, 0, 0)
+	AutoRocket.Position = UDim2.new(0.709677458, 0, 0.0505617969, 0)
+	AutoRocket.Size = UDim2.new(0, 77, 0, 30)
+	AutoRocket.Font = Enum.Font.Cartoon
+	AutoRocket.Text = "Auto Rocket [E]"
+	AutoRocket.TextColor3 = Color3.new(1, 1, 1)
+	AutoRocket.TextScaled = true
+	AutoRocket.TextSize = 14
+	AutoRocket.TextWrapped = true
+
+	reach.Name = "reach"
+	reach.Parent = functionsTab
+	reach.BackgroundColor3 = Color3.new(0.407843, 0.407843, 0.407843)
+	reach.BorderColor3 = Color3.new(0, 0, 0)
+	reach.Position = UDim2.new(0.0354838967, 0, 0.342696607, 0)
+	reach.Size = UDim2.new(0, 77, 0, 30)
+	reach.Font = Enum.Font.Cartoon
+	reach.Text = "Sword Reach"
+	reach.TextColor3 = Color3.new(1, 1, 1)
+	reach.TextScaled = true
+	reach.TextSize = 14
+	reach.TextWrapped = true
+
+	CreditsTab.Name = "CreditsTab"
+	CreditsTab.Parent = MainFrame
+	CreditsTab.BackgroundColor3 = Color3.new(0.196078, 0.196078, 0.196078)
+	CreditsTab.BorderColor3 = Color3.new(0, 0, 0)
+	CreditsTab.BorderSizePixel = 3
+	CreditsTab.Position = UDim2.new(0, 0, 0.245762706, 0)
+	CreditsTab.Size = UDim2.new(0, 310, 0, 178)
+
+	creds1.Name = "creds1"
+	creds1.Parent = CreditsTab
+	creds1.BackgroundColor3 = Color3.new(1, 1, 1)
+	creds1.BackgroundTransparency = 1
+	creds1.Position = UDim2.new(0.17741935, 0, 0.078651689, 0)
+	creds1.Size = UDim2.new(0, 200, 0, 30)
+	creds1.Font = Enum.Font.Cartoon
+	creds1.Text = "GUI By Neb#7444"
+	creds1.TextColor3 = Color3.new(1, 1, 1)
+	creds1.TextScaled = true
+	creds1.TextSize = 14
+	creds1.TextWrapped = true
+
+	creds2.Name = "creds2"
+	creds2.Parent = CreditsTab
+	creds2.BackgroundColor3 = Color3.new(1, 1, 1)
+	creds2.BackgroundTransparency = 1
+	creds2.Position = UDim2.new(0.17741935, 0, 0.331460685, 0)
+	creds2.Size = UDim2.new(0, 200, 0, 30)
+	creds2.Font = Enum.Font.Cartoon
+	creds2.Text = "Sword Reach by danvsdon"
+	creds2.TextColor3 = Color3.new(1, 1, 1)
+	creds2.TextScaled = true
+	creds2.TextSize = 14
+	creds2.TextWrapped = true
+
+	creds3.Name = "creds3"
+	creds3.Parent = CreditsTab
+	creds3.BackgroundColor3 = Color3.new(1, 1, 1)
+	creds3.BackgroundTransparency = 1
+	creds3.Position = UDim2.new(0.17741935, 0, 0.584269702, 0)
+	creds3.Size = UDim2.new(0, 200, 0, 30)
+	creds3.Font = Enum.Font.Cartoon
+	creds3.Text = "Some Functions made by UnpatchedCode "
+	creds3.TextColor3 = Color3.new(1, 1, 1)
+	creds3.TextScaled = true
+	creds3.TextSize = 14
+	creds3.TextWrapped = true
+
+	teleportsTabButton.Name = "teleportsTabButton"
+	teleportsTabButton.Parent = MainFrame
+	teleportsTabButton.BackgroundColor3 = Color3.new(0.666667, 0.666667, 1)
+	teleportsTabButton.Position = UDim2.new(0.821882963, 0, 0.0805084705, 0)
+	teleportsTabButton.Size = UDim2.new(0, 62, 0, 20)
+	teleportsTabButton.Font = Enum.Font.Cartoon
+	teleportsTabButton.Text = "Teleports"
+	teleportsTabButton.TextColor3 = Color3.new(0, 0, 0)
+	teleportsTabButton.TextSize = 14
+
+	FunctionsTabButton.Name = "FunctionsTabButton"
+	FunctionsTabButton.Parent = MainFrame
+	FunctionsTabButton.BackgroundColor3 = Color3.new(0.666667, 0.666667, 1)
+	FunctionsTabButton.Position = UDim2.new(0.821882963, 0, 0.199152529, 0)
+	FunctionsTabButton.Size = UDim2.new(0, 62, 0, 20)
+	FunctionsTabButton.Font = Enum.Font.Cartoon
+	FunctionsTabButton.Text = "Functions"
+	FunctionsTabButton.TextColor3 = Color3.new(0, 0, 0)
+	FunctionsTabButton.TextSize = 14
+
+	CreditsTabButton.Name = "CreditsTabButton"
+	CreditsTabButton.Parent = MainFrame
+	CreditsTabButton.BackgroundColor3 = Color3.new(0.666667, 0.666667, 1)
+	CreditsTabButton.Position = UDim2.new(0.821882963, 0, 0.326271176, 0)
+	CreditsTabButton.Size = UDim2.new(0, 62, 0, 20)
+	CreditsTabButton.Font = Enum.Font.Cartoon
+	CreditsTabButton.Text = "Credits"
+	CreditsTabButton.TextColor3 = Color3.new(0, 0, 0)
+	CreditsTabButton.TextSize = 14
+
+	openclose.Name = "openclose"
+	openclose.Parent = doomspiregui
+	openclose.BackgroundColor3 = Color3.new(0.666667, 0, 1)
+	openclose.BorderColor3 = Color3.new(0, 0, 0)
+	openclose.BorderSizePixel = 3
+	openclose.Position = UDim2.new(0.839140773, 0, 0.733945668, 0)
+	openclose.Size = UDim2.new(0, 108, 0, 43)
+	openclose.Font = Enum.Font.Cartoon
+	openclose.Text = "Open/Close"
+	openclose.TextColor3 = Color3.new(0, 0, 0)
+	openclose.TextScaled = true
+	openclose.TextSize = 14
+	openclose.TextWrapped = true
+	-- Scripts:
+	function SCRIPT_BEYI83_FAKESCRIPT() -- redtop.Script 
+		getfenv().script = Instance.new('Script', redtop)
+
+		local redtp = script.Parent
+
+		redtp.MouseButton1Click:Connect(function()
+			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-92,131,-1.1)
+		end)
+
+	end
+	coroutine.resume(coroutine.create(SCRIPT_BEYI83_FAKESCRIPT))
+	function SCRIPT_PPRL84_FAKESCRIPT() -- bluetop.Script 
+		getfenv().script = Instance.new('Script', bluetop)
+
+		local bluetp = script.Parent
+
+		bluetp.MouseButton1Click:Connect(function()
+			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-2.3,131,91)
+		end)
+
+	end
+	coroutine.resume(coroutine.create(SCRIPT_PPRL84_FAKESCRIPT))
+	function SCRIPT_LNFU85_FAKESCRIPT() -- yellowtop.Script 
+		getfenv().script = Instance.new('Script', yellowtop)
+
+		local yellowtp = script.Parent
+
+		yellowtp.MouseButton1Click:Connect(function()
+			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(86,131,1)
+		end)
+
+	end
+	coroutine.resume(coroutine.create(SCRIPT_LNFU85_FAKESCRIPT))
+	function SCRIPT_DPYG79_FAKESCRIPT() -- greentop.Script 
+		getfenv().script = Instance.new('Script', greentop)
+
+		local greentp = script.Parent
+
+		greentp.MouseButton1Click:Connect(function()
+			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1.4,131,-81)
+		end)
+
+	end
+	coroutine.resume(coroutine.create(SCRIPT_DPYG79_FAKESCRIPT))
+	function SCRIPT_SQUC70_FAKESCRIPT() -- redbottom.Script 
+		getfenv().script = Instance.new('Script', redbottom)
+
+		local redb = script.Parent
+
+		redb.MouseButton1Click:Connect(function()
+			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-131,25,-1.5)
+		end)
+
+	end
+	coroutine.resume(coroutine.create(SCRIPT_SQUC70_FAKESCRIPT))
+	function SCRIPT_OGQY70_FAKESCRIPT() -- bluebottom.Script 
+		getfenv().script = Instance.new('Script', bluebottom)
+
+		local blueb = script.Parent
+
+		blueb.MouseButton1Click:Connect(function()
+			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-0.4,25,131)
+		end)
+
+	end
+	coroutine.resume(coroutine.create(SCRIPT_OGQY70_FAKESCRIPT))
+	function SCRIPT_WUCL68_FAKESCRIPT() -- yellowbottom.Script 
+		getfenv().script = Instance.new('Script', yellowbottom)
+
+		local yelb = script.Parent
+
+		yelb.MouseButton1Click:Connect(function()
+			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(131,25,-1.5 )
+		end)
+
+	end
+	coroutine.resume(coroutine.create(SCRIPT_WUCL68_FAKESCRIPT))
+	function SCRIPT_OWWF76_FAKESCRIPT() -- greenbottom.Script 
+		getfenv().script = Instance.new('Script', greenbottom)
+
+		local grb = script.Parent
+
+		grb.MouseButton1Click:Connect(function()
+			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-0.4,25,-131)
+		end)
+
+	end
+	coroutine.resume(coroutine.create(SCRIPT_OWWF76_FAKESCRIPT))
+	function SCRIPT_FAEU82_FAKESCRIPT() -- sling.Script 
+		getfenv().script = Instance.new('Script', sling)
+
+		local slinger = script.Parent
+
+		slinger.MouseButton1Click:Connect(function()
+			wait(0)
+			local lp = game:service('Players').LocalPlayer
+
+			local spamrocket = false
+
+			VELOCITY = 85 -- constant
+
+			lp:GetMouse().KeyDown:connect(function(k)
+				if k:lower() == "x" then
+					spamrocket = not spamrocket
+				end
+			end)
+
+			function computeLaunchAngle(dx,dy,grav)
+				-- arcane
+				-- http://en.wikipedia.org/wiki/Trajectory_of_a_projectile
+
+				local g = math.abs(grav)
+				local inRoot = (VELOCITY*VELOCITY*VELOCITY*VELOCITY) - (g * ((g*dx*dx) + (2*dy*VELOCITY*VELOCITY)))
+				if inRoot <= 0 then
+					return .25 * math.pi
+				end
+				local root = math.sqrt(inRoot)
+				local inATan1 = ((VELOCITY*VELOCITY) + root) / (g*dx)
+
+				local inATan2 = ((VELOCITY*VELOCITY) - root) / (g*dx)
+				local answer1 = math.atan(inATan1)
+				local answer2 = math.atan(inATan2)
+				if answer1 < answer2 then return answer1 end
+				return answer2
+			end
+
+			function computeDirection(vec)
+				local invSqrt = 1 / math.sqrt(vec.magnitude * vec.magnitude)
+				return Vector3.new(vec.x * invSqrt, vec.y * invSqrt, vec.z * invSqrt)
+			end
+
+			while wait(0) do
+				if spamrocket then
+					if lp.Character:FindFirstChild("Slingshot") then
+						local rocket = lp.Character.Slingshot
+
+						local vCharacter = lp.Character
+						local vTarget = lp:GetMouse().Hit.p
+						local humanoid = vCharacter.Humanoid
+
+						if humanoid then
+							if humanoid.Health ~= 0 then local head = vCharacter:findFirstChild("Head")
+								if head then 
+									local dir = vTarget - head.Position
+									dir = computeDirection(dir)
+
+									local launch = vCharacter.Torso.Position + 5 * dir
+
+									local delta = vTarget - launch
+
+									local dy = delta.y
+
+									local new_delta = Vector3.new(delta.x, 0, delta.z)
+									delta = new_delta
+
+									local dx = delta.magnitude
+									local unit_delta = delta.unit
+
+									-- acceleration due to gravity in RBX units
+									local g = (-9.81 * 20)
+
+									local theta = computeLaunchAngle( dx, dy, g)
+
+									local vy = math.sin(theta)
+									local xz = math.cos(theta)
+									local vx = unit_delta.x * xz
+									local vz = unit_delta.z * xz 
+
+									local vel=Vector3.new(vx,vy,vz) * VELOCITY
+									rocket:WaitForChild("PelletCreateEvent",1):FireServer(launch,vel)
+									wait(1 / 25)
+								end
+							end
+						end
+					end
+				end
+			end
+		end)
+
+	end
+	coroutine.resume(coroutine.create(SCRIPT_FAEU82_FAKESCRIPT))
+	function SCRIPT_LSYP71_FAKESCRIPT() -- sling2.Script 
+		getfenv().script = Instance.new('Script', sling2)
+
+		local slinghead = script.Parent
+
+		slinghead.MouseButton1Click:Connect(function()
+			wait(0)
+			local lp = game:service('Players').LocalPlayer
+
+			local spamrocket = false
+
+			VELOCITY = 85 -- constant
+
+			lp:GetMouse().KeyDown:connect(function(k)
+				if k:lower() == "x" then
+					spamrocket = not spamrocket
+				end
+			end)
+
+			function computeLaunchAngle(dx,dy,grav)
+				-- arcane
+				-- http://en.wikipedia.org/wiki/Trajectory_of_a_projectile
+
+				local g = math.abs(grav)
+				local inRoot = (VELOCITY*VELOCITY*VELOCITY*VELOCITY) - (g * ((g*dx*dx) + (2*dy*VELOCITY*VELOCITY)))
+				if inRoot <= 0 then
+					return .25 * math.pi
+				end
+				local root = math.sqrt(inRoot)
+				local inATan1 = ((VELOCITY*VELOCITY) + root) / (g*dx)
+
+				local inATan2 = ((VELOCITY*VELOCITY) - root) / (g*dx)
+				local answer1 = math.atan(inATan1)
+				local answer2 = math.atan(inATan2)
+				if answer1 < answer2 then return answer1 end
+				return answer2
+			end
+
+			function computeDirection(vec)
+				local invSqrt = 1 / math.sqrt(vec.magnitude * vec.magnitude)
+				return Vector3.new(vec.x * invSqrt, vec.y * invSqrt, vec.z * invSqrt)
+			end
+
+			while wait(0) do
+				if spamrocket then
+					if lp.Character:FindFirstChild("Slingshot") then
+						local rocket = lp.Character.Slingshot
+
+						local vCharacter = lp.Character
+						local vTarget = lp:GetMouse().Hit.p
+						local humanoid = vCharacter.Humanoid
+
+						if humanoid then
+							if humanoid.Health ~= 0 then local head = vCharacter:findFirstChild("Head")
+								if head then 
+									for i,v in pairs(game:service('Players'):GetPlayers()) do
+										if v.TeamColor ~= lp.TeamColor and v.userId ~= lp.userId then
+											if v.Character ~= nil then if v.Character:FindFirstChild("Torso") then
+													rocket:WaitForChild("PelletCreateEvent",1):FireServer(v.Character.Torso.Position + Vector3.new(0, 4, 0),Vector3.new(0, -5, 0))
+
+												end end end
+									end
+									wait(1 / 25)
+								end
+							end
+						end
+					end
+				end
+			end
+		end)
+
+	end
+	coroutine.resume(coroutine.create(SCRIPT_LSYP71_FAKESCRIPT))
+	function SCRIPT_TNYZ70_FAKESCRIPT() -- AutoRocket.Script 
+		getfenv().script = Instance.new('Script', AutoRocket)
+
+		local autorckt = script.Parent
+
+		autorckt.MouseButton1Click:Connect(function()
+			wait(0)
+			local lp = game:service('Players').LocalPlayer
+
+			local spamrocket = false
+
+			lp:GetMouse().KeyDown:connect(function(k)
+				if k:lower() == "e" then
+					spamrocket = not spamrocket
+				end
+			end)
+
+			function computeDirection(vec)
+				local invSqrt = 1 / math.sqrt(vec.magnitude * vec.magnitude)
+				return Vector3.new(vec.x * invSqrt, vec.y * invSqrt, vec.z * invSqrt)
+			end
+
+			while wait(0) do
+				if spamrocket then
+					if lp.Character:FindFirstChild("RocketLauncher") then
+						local rocket = lp.Character.RocketLauncher
+
+						local vCharacter = lp.Character
+						local vTarget = lp:GetMouse().Hit.p
+						local humanoid = vCharacter.Humanoid
+
+						if humanoid then
+							if humanoid.Health ~= 0 then
+								local Head = vCharacter.PrimaryPart
+
+								local dir = vTarget - Head.Position
+								dir = computeDirection(dir)
+
+								local pos = Head.Position + (dir * 8)
+								local ad=5000
+
+								rocket.RocketCreateEvent:FireServer(ad,pos,dir)
+								wait(6)
+							end
+						end
+					end
+				end
+			end
+		end)
+
+	end
+	coroutine.resume(coroutine.create(SCRIPT_TNYZ70_FAKESCRIPT))
+	function SCRIPT_JDVY74_FAKESCRIPT() -- reach.Script 
+		getfenv().script = Instance.new('Script', reach)
+
+		local reacher = script.Parent
+
+		reacher.MouseButton1Click:Connect(function()
+			local sword=game.Players.LocalPlayer.Backpack.Sword
+			a=Instance.new("SelectionBox",sword.Handle)
+			a.Adornee=sword.Handle
+			sword.Handle.Size=Vector3.new(0.2,0.2,120)
+			sword.Equipped:connect(function()
+				while wait() do
+					game.Workspace[game.Players.LocalPlayer.Name].Sword.GripPos=Vector3.new(0,0,-60)
+				end
+			end)
+		end)
+
+	end
+	coroutine.resume(coroutine.create(SCRIPT_JDVY74_FAKESCRIPT))
+	function SCRIPT_NCNQ66_FAKESCRIPT() -- teleportsTabButton.Script 
+		getfenv().script = Instance.new('Script', teleportsTabButton)
+
+		local tptab = script.Parent
+
+		tptab.MouseButton1Click:Connect(function()
+			tptab.Parent.CreditsTab.Visible = false
+			tptab.Parent.functionsTab.Visible = false
+			tptab.Parent.teleportsTab.Visible = true
+		end)
+
+	end
+	coroutine.resume(coroutine.create(SCRIPT_NCNQ66_FAKESCRIPT))
+	function SCRIPT_WJWN79_FAKESCRIPT() -- FunctionsTabButton.Script 
+		getfenv().script = Instance.new('Script', FunctionsTabButton)
+
+		local functionstab = script.Parent
+
+		functionstab.MouseButton1Click:Connect(function()
+			functionstab.Parent.CreditsTab.Visible = false
+			functionstab.Parent.functionsTab.Visible = true
+			functionstab.Parent.teleportsTab.Visible = false
+		end)
+
+	end
+	coroutine.resume(coroutine.create(SCRIPT_WJWN79_FAKESCRIPT))
+	function SCRIPT_OHTV68_FAKESCRIPT() -- CreditsTabButton.Script 
+		getfenv().script = Instance.new('Script', CreditsTabButton)
+
+		local functionstab = script.Parent
+
+		functionstab.MouseButton1Click:Connect(function()
+			functionstab.Parent.CreditsTab.Visible = true
+			functionstab.Parent.functionsTab.Visible = false
+			functionstab.Parent.teleportsTab.Visible = false
+		end)
+
+	end
+	coroutine.resume(coroutine.create(SCRIPT_OHTV68_FAKESCRIPT))
+	function SCRIPT_GJRM80_FAKESCRIPT() -- MainFrame.draggable 
+		getfenv().script = Instance.new('Script', MainFrame)
+
+		mainframed = script.Parent
+
+		mainframed.Active = true
+		mainframed.Draggable = true
+
+	end
+	coroutine.resume(coroutine.create(SCRIPT_GJRM80_FAKESCRIPT))
+	function SCRIPT_CSGR67_FAKESCRIPT() -- MainFrame.Script 
+		getfenv().script = Instance.new('Script', MainFrame)
+
+
+
+	end
+	coroutine.resume(coroutine.create(SCRIPT_CSGR67_FAKESCRIPT))
+	function SCRIPT_ZHQY71_FAKESCRIPT() -- openclose.Script 
+		getfenv().script = Instance.new('Script', openclose)
+
+		local toggle = script.Parent
+		local visibled = script.Parent.Parent.MainFrame
+
+		toggle.MouseButton1Click:Connect(function()
+			if visibled.Visible == true then
+				visibled.Visible = false
+
+
+			elseif visibled.Visible == false then
+				visibled.Visible = true
+			end
+		end)
+
+	end
+	coroutine.resume(coroutine.create(SCRIPT_ZHQY71_FAKESCRIPT))
+	function SCRIPT_YETB81_FAKESCRIPT() -- doomspiregui.nodisappear 
+		getfenv().script = Instance.new('Script', doomspiregui)
+
+		script.Parent.ResetOnSpawn = false
+
+	end
+	coroutine.resume(coroutine.create(SCRIPT_YETB81_FAKESCRIPT))
+end)
+
+SGUI20.Name = "S GUI 2.0"
+SGUI20.Parent = Frame
+SGUI20.BackgroundColor3 = Color3.fromRGB(114, 137, 218)
+SGUI20.BorderColor3 = Color3.fromRGB(255, 255, 255)
+SGUI20.BorderSizePixel = 0
+SGUI20.Position = UDim2.new(0.754777074, 0, 0.222222224, 0)
+SGUI20.Size = UDim2.new(0, 68, 0, 56)
+SGUI20.Font = Enum.Font.SourceSans
+SGUI20.Text = "S GUI 2.0"
+SGUI20.TextColor3 = Color3.fromRGB(0, 0, 0)
+SGUI20.TextSize = 14.000
+SGUI20.TextWrapped = true
+SGUI20.MouseButton1Down:connect(function()
+
+	local ScreenGui = Instance.new("ScreenGui")
+	local Frame = Instance.new("Frame")
+	local TextLabel = Instance.new("TextLabel")
+	local Printhi = Instance.new("TextButton")
+	local infyield = Instance.new("TextButton")
+	local cmdx = Instance.new("TextButton")
+	local SGUI10 = Instance.new("TextButton")
+
+
+	ScreenGui.Parent = game.CoreGui
+
+	Frame.Parent = ScreenGui
+	Frame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	Frame.Position = UDim2.new(0.545578241, 0, 0.383399218, 0)
+	Frame.Size = UDim2.new(0, 189, 0, 73)
+	Frame.Active = true
+	Frame.Draggable = true
+
+	TextLabel.Parent = Frame
+	TextLabel.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+	TextLabel.Size = UDim2.new(0, 189, 0, 18)
+	TextLabel.Font = Enum.Font.Roboto
+	TextLabel.Text = "S GUI 2.0 | Made by Simon"
+	TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+	TextLabel.TextScaled = true
+	TextLabel.TextSize = 15.000
+	TextLabel.TextWrapped = true
+
+	Printhi.Name = "Printhi"
+	Printhi.Parent = Frame
+	Printhi.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+	Printhi.Position = UDim2.new(0.0476190485, 0, 0.342465758, 0)
+	Printhi.Size = UDim2.new(0, 110, 0, 20)
+	Printhi.Font = Enum.Font.SourceSans
+	Printhi.Text = "Print \"hi\""
+	Printhi.TextColor3 = Color3.fromRGB(255, 255, 255)
+	Printhi.TextScaled = true
+	Printhi.TextSize = 14.000
+	Printhi.TextWrapped = true
+	Printhi.MouseButton1Down:connect(function()
+		print("hi")
+	end)
+
+	infyield.Name = "inf yield"
+	infyield.Parent = Frame
+	infyield.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+	infyield.Position = UDim2.new(0.0476190485, 0, 0.726027369, 0)
+	infyield.Size = UDim2.new(0, 110, 0, 20)
+	infyield.Font = Enum.Font.SourceSans
+	infyield.Text = "Inf Yield"
+	infyield.TextColor3 = Color3.fromRGB(255, 255, 255)
+	infyield.TextScaled = true
+	infyield.TextSize = 14.000
+	infyield.TextWrapped = true
+	infyield.MouseButton1Down:connect(function()
+		loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+	end)
+
+	cmdx.Name = "cmdx"
+	cmdx.Parent = Frame
+	cmdx.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+	cmdx.Position = UDim2.new(0.714285731, 0, 0.356164396, 0)
+	cmdx.Size = UDim2.new(0, 46, 0, 19)
+	cmdx.Font = Enum.Font.SourceSans
+	cmdx.Text = "CMD-X"
+	cmdx.TextColor3 = Color3.fromRGB(255, 255, 255)
+	cmdx.TextScaled = true
+	cmdx.TextSize = 14.000
+	cmdx.TextWrapped = true
+	cmdx.MouseButton1Down:connect(function()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/CMD-X/CMD-X/master/Source", true))()
+	end)
+
+	SGUI10.Name = "S GUI 1.0"
+	SGUI10.Parent = Frame
+	SGUI10.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+	SGUI10.Position = UDim2.new(0.714285731, 0, 0.726027369, 0)
+	SGUI10.Size = UDim2.new(0, 46, 0, 19)
+	SGUI10.Font = Enum.Font.SourceSans
+	SGUI10.Text = "S GUI 1.0"
+	SGUI10.TextColor3 = Color3.fromRGB(255, 255, 255)
+	SGUI10.TextScaled = true
+	SGUI10.TextSize = 14.000
+	SGUI10.TextWrapped = true
+	SGUI10.MouseButton1Down:connect(function()
+
+		local ScreenGui = Instance.new("ScreenGui")
+		local main = Instance.new("Frame")
+		local label = Instance.new("TextLabel")
+		local Speed = Instance.new("TextButton")
+		local JP = Instance.new("TextButton")
+
+
+		ScreenGui.Parent = game.CoreGui
+
+		main.Name = "main"
+		main.Parent = ScreenGui
+		main.BackgroundColor3 = Color3.fromRGB(35, 39, 42)
+		main.Position = UDim2.new(0.46938774, 0, 0.743083, 0)
+		main.Size = UDim2.new(0, 352, 0, 158)
+		main.Active = true
+		main.Draggable = true
+
+		label.Name = "label"
+		label.Parent = main
+		label.BackgroundColor3 = Color3.fromRGB(86, 99, 247)
+		label.Size = UDim2.new(0, 352, 0, 25)
+		label.Font = Enum.Font.GothamBold
+		label.Text = "S GUI  |  Made by Simon"
+		label.TextColor3 = Color3.fromRGB(0, 0, 0)
+		label.TextSize = 26.000
+		label.TextXAlignment = Enum.TextXAlignment.Left
+
+		Speed.Name = "Speed"
+		Speed.Parent = main
+		Speed.BackgroundColor3 = Color3.fromRGB(86, 99, 247)
+		Speed.BorderSizePixel = 2
+		Speed.Position = UDim2.new(0.0340909101, 0, 0.240506336, 0)
+		Speed.Size = UDim2.new(0, 106, 0, 36)
+		Speed.Style = Enum.ButtonStyle.RobloxRoundDefaultButton
+		Speed.Font = Enum.Font.Cartoon
+		Speed.Text = "Speed (dw)"
+		Speed.TextColor3 = Color3.fromRGB(0, 0, 0)
+		Speed.TextScaled = true
+		Speed.TextSize = 14.000
+		Speed.TextWrapped = true
+		Speed.MouseButton1Down:connect(function()
+			local Player = game.Players.PlayerYouIndex
+
+			-- Check if they have a Character
+			if Player.Character then
+				-- Get the humanoid and set the walkspeed
+				Player.Character.Humanoid.WalkSpeed = 50
+			end
+		end)
+
+		JP.Name = "CMD-X"
+		JP.Parent = main
+		JP.BackgroundColor3 = Color3.fromRGB(86, 99, 247)
+		JP.BorderSizePixel = 2
+		JP.Position = UDim2.new(0.0340909101, 0, 0.632911384, 0)
+		JP.Size = UDim2.new(0, 106, 0, 36)
+		JP.Style = Enum.ButtonStyle.RobloxRoundDefaultButton
+		JP.Font = Enum.Font.Cartoon
+		JP.Text = "CMD-X"
+		JP.TextColor3 = Color3.fromRGB(0, 0, 0)
+		JP.TextScaled = true
+		JP.TextSize = 14.000
+		JP.TextWrapped = true
+		JP.MouseButton1Down:connect(function()
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/CMD-X/CMD-X/master/Source", true))()
+		end)
+
+	end)
+end)
+
+CREDITS.Name = "CREDITS"
+CREDITS.Parent = Frame
+CREDITS.BackgroundColor3 = Color3.fromRGB(114, 137, 218)
+CREDITS.BorderColor3 = Color3.fromRGB(255, 255, 255)
+CREDITS.BorderSizePixel = 0
+CREDITS.Position = UDim2.new(0.754777074, 0, 0.583333313, 0)
+CREDITS.Size = UDim2.new(0, 68, 0, 56)
+CREDITS.Font = Enum.Font.SourceSans
+CREDITS.Text = "CREDITS & INFO"
+CREDITS.TextColor3 = Color3.fromRGB(0, 0, 0)
+CREDITS.TextSize = 11.000
+CREDITS.TextWrapped = true
+CREDITS.MouseButton1Down:connect(function()
+	local Creditsgui = Instance.new("ScreenGui")
+	local Credits = Instance.new("Frame")
+	local TextLabel = Instance.new("TextLabel")
+
+	Creditsgui.Name = "Creditsgui"
+	Creditsgui.Parent = game.CoreGui
+
+	Credits.Name = "Credits"
+	Credits.Parent = Creditsgui
+	Credits.BackgroundColor3 = Color3.fromRGB(44, 47, 51)
+	Credits.Position = UDim2.new(0.178231299, 0, 0.645586312, 0)
+	Credits.Size = UDim2.new(0, 287, 0, 93)
+	Credits.Active = true
+	Credits.Draggable = true
+
+
+	TextLabel.Parent = Credits
+	TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	TextLabel.BackgroundTransparency = 1.000
+	TextLabel.Size = UDim2.new(0, 290, 0, 89)
+	TextLabel.Font = Enum.Font.SourceSans
+	TextLabel.Text = "The Gui was made by Simon, and the official pastebin is Siimoon, not anything else, the gui was made in January 2022, and the design is based of Discord's colors. Thank you for using the gui."
+	TextLabel.TextColor3 = Color3.fromRGB(114, 137, 218)
+	TextLabel.TextScaled = true
+	TextLabel.TextSize = 14.000
+	TextLabel.TextWrapped = true
+end)
