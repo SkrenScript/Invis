@@ -318,14 +318,14 @@ local Tab = Window:MakeTab({
 Tab:AddButton({
 	Name = "Swag Mode",
 	Callback = function()
-        loadstring(game:HttpGet(('loadstring(game:HttpGet('https://raw.githubusercontent.com/lerkermer/lua-projects/master/SwagModeV002'))()'),true))()
+        loadstring(game:HttpGet(('https://raw.githubusercontent.com/lerkermer/lua-projects/master/SwagModeV002'),true))()
   	end    
 })
 
 Tab:AddButton({
 	Name = "Swag Mode Bypass",
 	Callback = function()
-        loadstring(game:HttpGet(('loadstring(game:HttpGet('https://raw.githubusercontent.com/SkrenScript/Invis/main/Bypass'))()'),true))()
+        loadstring(game:HttpGet(('https://raw.githubusercontent.com/SkrenScript/Invis/main/Bypass'),true))()
   	end    
 })
 
