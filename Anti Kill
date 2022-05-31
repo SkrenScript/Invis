@@ -1,0 +1,6 @@
+workspace.Skrenpros.LeftHand:Destroy()
+workspace.Skrenpros.RightHand:Destroy()
+workspace.Skrenpros.RightLowerArm:Destroy()
+workspace.Skrenpros.RightUpperArm:Destroy()
+workspace.Skrenpros.LeftUpperArm:Destroy()
+workspace.Skrenpros.LeftLowerArm:Destroy()
