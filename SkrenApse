@@ -136,7 +136,7 @@ Tab:AddButton({
 local Tab = Window:MakeTab({
 	Name = "Reanimations",
 	Icon = "rbxassetid://4483345998",
-	PremiumOnly = true
+	PremiumOnly = false
 })
 
 Tab:AddButton({
@@ -279,7 +279,7 @@ Tab:AddButton({
 local Tab = Window:MakeTab({
 	Name = "Melissa",
 	Icon = "rbxassetid://4483345998",
-	PremiumOnly = true
+	PremiumOnly = false
 })
 
 Tab:AddButton({
