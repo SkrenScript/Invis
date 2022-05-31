@@ -1,0 +1,10 @@
+_G.autoTab = true;
+
+spawn(function()
+    while _G.autoTab == true do
+for i,v in pairs(game:GetService("Players"):GetPlayers()) do
+game:GetService("Players").LocalPlayer.Character.Push.PushTool:FireServer(unpack({[1] = v.Character}))
+end
+    wait()
+    end
+ end)
