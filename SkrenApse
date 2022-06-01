@@ -284,6 +284,13 @@ Tab:AddButton({
 })
 
 Tab:AddButton({
+	Name = "Type Racer",
+	Callback = function()
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/SkrenScript/Invis/main/Type%20Racer'))()
+  	end    
+})
+
+Tab:AddButton({
 	Name = "Auto Translate",
 	Callback = function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/SkrenScript/Invis/main/Auto%20Translate"))()
@@ -294,6 +301,13 @@ Tab:AddButton({
 	Name = "Legless",
 	Callback = function()
         loadstring(game:HttpGet(('https://raw.githubusercontent.com/SkrenScript/Invis/main/Legless'),true))()
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Auto Response",
+	Callback = function()
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/SkrenScript/Invis/main/Auto%20Response'))()
   	end    
 })
 
@@ -377,6 +391,13 @@ Tab:AddButton({
   	end    
 })
 
+Tab:AddButton({
+	Name = "Muscle Legend",
+	Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/LOOF-sys/Roblox-Shit/main/MuscleLegends.lua"))()
+  	end    
+})
+
 local Tab = Window:MakeTab({
 	Name = "Bed Wars/Antarktis",
 	Icon = "rbxassetid://4483345998",
@@ -396,5 +417,20 @@ Tab:AddButton({
         loadstring(game:HttpGet("https://raw.githubusercontent.com/SirMorfin/Morfins-Mods/main/Expedition%20Antarctica"))()
   	end    
 })
+
+local Tab = Window:MakeTab({
+	Name = "Meep City",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+Tab:AddButton({
+	Name = "Meep City Destroyer",
+	Callback = function()
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/synolope/meepcracked/main/loader.lua'))()
+  	end    
+})
+
+
 
 
