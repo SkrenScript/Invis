@@ -263,6 +263,20 @@ Tab:AddButton({
 })
 
 Tab:AddButton({
+	Name = "Mini Server Finder",
+	Callback = function()
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/SkrenScript/Invis/main/Mini%20Server%20finder'))()
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Auto Translate",
+	Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/SkrenScript/Invis/main/Auto%20Translate"))()
+  	end    
+})
+
+Tab:AddButton({
 	Name = "Legless",
 	Callback = function()
         loadstring(game:HttpGet(('https://raw.githubusercontent.com/SkrenScript/Invis/main/Legless'),true))()
@@ -335,3 +349,18 @@ Tab:AddButton({
         loadstring(game:HttpGet('https://raw.githubusercontent.com/SpaceYes/Lua/Main/DaHood.Lua'))()
   	end    
 })
+
+local Tab = Window:MakeTab({
+	Name = "Ninja Legend/Muscle Legend",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+Tab:AddButton({
+	Name = "Ninja Legend Gui",
+	Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/scriptpastebin/raw/main/1"))()
+  	end    
+})
+
+
