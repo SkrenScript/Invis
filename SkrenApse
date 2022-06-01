@@ -70,6 +70,13 @@ Tab:AddButton({
 })
 
 Tab:AddButton({
+	Name = "Bad Word Script",
+	Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/SkrenScript/Invis/main/Bad%20Word"))()
+  	end    
+})
+
+Tab:AddButton({
 	Name = "Walk on Walls",
 	Callback = function()
         loadstring(game:HttpGet(('https://raw.githubusercontent.com/SkrenScript/Invis/main/Walk%20on%20Walls'),true))()
@@ -263,6 +270,13 @@ Tab:AddButton({
 })
 
 Tab:AddButton({
+	Name = "Ball",
+	Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/SkrenScript/Invis/main/Ball"))()
+  	end    
+})
+
+Tab:AddButton({
 	Name = "Mini Server Finder",
 	Callback = function()
         loadstring(game:HttpGet('https://raw.githubusercontent.com/SkrenScript/Invis/main/Mini%20Server%20finder'))()
@@ -360,6 +374,26 @@ Tab:AddButton({
 	Name = "Ninja Legend Gui",
 	Callback = function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/scriptpastebin/raw/main/1"))()
+  	end    
+})
+
+local Tab = Window:MakeTab({
+	Name = "Bed Wars/Antarktis",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+Tab:AddButton({
+	Name = "Bed Wars",
+	Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/7GrandDadPGN/VapeV4ForRoblox/main/NewMainScript.lua", true))()
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Antarktis",
+	Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/SirMorfin/Morfins-Mods/main/Expedition%20Antarctica"))()
   	end    
 })
 
