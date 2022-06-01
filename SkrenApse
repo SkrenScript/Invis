@@ -196,6 +196,13 @@ Tab:AddButton({
 })
 
 Tab:AddButton({
+	Name = "Nullware",
+	Callback = function()
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/SkrenScript/Invis/main/Nullware'))();
+  	end    
+})
+
+Tab:AddButton({
 	Name = "Zombie Fe",
 	Callback = function()
         loadstring(game:HttpGet('https://raw.githubusercontent.com/SkrenScript/Invis/main/Zombie%20Fe',true))()
@@ -287,6 +294,13 @@ Tab:AddButton({
 	Name = "Ball",
 	Callback = function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/SkrenScript/Invis/main/Ball"))()
+  	end    
+})
+
+ab:AddButton({
+	Name = "Gravity",
+	Callback = function()
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/SkrenScript/Invis/main/Gravity'))();
   	end    
 })
 
@@ -478,8 +492,18 @@ Tab:AddButton({
   	end    
 })
 
+local Tab = Window:MakeTab({
+	Name = "Murder Mystery 2",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
 
-
+Tab:AddButton({
+	Name = "Murder Mystery 2",
+	Callback = function()
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/SkrenScript/Invis/main/Murder%20Mystery'))();
+  	end    
+})
 
 
 
