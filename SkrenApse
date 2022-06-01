@@ -189,6 +189,13 @@ Tab:AddButton({
 })
 
 Tab:AddButton({
+	Name = "FE Finger",
+	Callback = function()
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/SkrenScript/Invis/main/FE%20Finger'))();
+  	end    
+})
+
+Tab:AddButton({
 	Name = "Zombie Fe",
 	Callback = function()
         loadstring(game:HttpGet('https://raw.githubusercontent.com/SkrenScript/Invis/main/Zombie%20Fe',true))()
@@ -266,6 +273,13 @@ Tab:AddButton({
 	Name = "Korblox",
 	Callback = function()
         loadstring(game:HttpGet(('https://raw.githubusercontent.com/SkrenScript/Invis/main/Korblox'),true))()
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Decompiler",
+	Callback = function()
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/SkrenScript/Invis/main/Decompiler'))()
   	end    
 })
 
@@ -430,6 +444,42 @@ Tab:AddButton({
         loadstring(game:HttpGet('https://raw.githubusercontent.com/synolope/meepcracked/main/loader.lua'))()
   	end    
 })
+
+local Tab = Window:MakeTab({
+	Name = "Area 51",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+Tab:AddButton({
+	Name = "Area 51",
+	Callback = function()
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/Ghostmode65/STK-Bo2/master/STK-Menus/v5/STKv5.txt'))()
+  	end    
+})
+
+local Tab = Window:MakeTab({
+	Name = "Story Games",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+Tab:AddButton({
+	Name = "Break In",
+	Callback = function()
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/SkrenScript/Invis/main/Break%20In'))()
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Hotel",
+	Callback = function()
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/xFLCN/Camping/Scripts/Hotel'))();
+  	end    
+})
+
+
+
 
 
 
