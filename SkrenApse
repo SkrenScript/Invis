@@ -120,6 +120,13 @@ Tab:AddButton({
 })
 
 Tab:AddButton({
+	Name = "Loop Push",
+	Callback = function()
+        loadstring(game:HttpGet(('https://raw.githubusercontent.com/SkrenScript/Invis/main/Loop%20Push'),true))()
+  	end    
+})
+
+Tab:AddButton({
 	Name = "Anti Ragdoll",
 	Callback = function()
         loadstring(game:HttpGet('https://raw.githubusercontent.com/SkrenScript/Invis/main/Anti%20Ragdoll'))()
