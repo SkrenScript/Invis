@@ -1,0 +1,139 @@
+local config = {
+    enterAll = false, --// false: players must enter the entryCommand to play | true: everyone can play 
+    entryCommand = "!enter", --// messages players have to type to enter (if enterAll is false)
+    minLength = 100, --// minimum length of quote
+    maxLength = 170, --// maximum length of quote
+    waitTime = 30 --// how much time players have to enter, say !forcestart to force the round start
+}
+
+
+--// Services
+local pl = game:GetService("Players")
+local http = game:GetService("HttpService")
+local text = game:GetService("TextService")
+local cs = game:GetService("Chat")
+
+--// Variables
+local lp = pl.LocalPlayer 
+local char = lp.Character
+
+local t = table
+
+local forceStarted = false
+local players = {}
+local runners = {}
+local cons = {}
+local timer = 0
+local crem = game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest
+
+--// Functions
+local function chat(msg, addtag)
+    if addtag then
+        crem:FireServer("[Typeracer]: " .. msg,"All")
+    else
+        crem:FireServer(msg,"All")
+    end
+end
+
+local function getQuote()
+    local req = game:HttpGet("https://api.quotable.io/random?minLength=" .. tostring(config.minLength) .. "&maxLength=" .. tostring(config.maxLength))
+    local dec = http:JSONDecode(req)
+    local quote = dec["content"]
+    local filtered = cs:FilterStringForBroadcast(quote,lp)
+    if filtered == nil or filtered:find("#") then
+        print("censored or nil")
+        wait()
+        getQuote()
+    else
+        return quote
+    end
+end
+
+local function clearConnections()
+    for i,v in next,cons do
+        v:Disconnect()
+    end
+    cons = {}
+end
+
+local function addPlayer(plr)
+    t.insert(players, plr)
+end
+
+local function allowEntries()
+    for i,v in pairs(pl:GetPlayers()) do
+        t.insert(cons, v.Chatted:Connect(function(msg)
+            if msg:lower() == tostring(config.entryCommand) then
+                addPlayer(v)
+            end
+        end))
+    end 
+end
+
+local function endGame(plr)
+    local winner = plr
+    local endtime = math.round(tick() - timer)
+    clearConnections()
+    task.wait(.1)
+    chat(plr.DisplayName .. " has won the race! The game lasted " .. tostring(endtime) .. " seconds.", true)
+end
+
+local function awaitWinner(qu)
+    for i,v in pairs(players) do
+        t.insert(cons, v.Chatted:Connect(function(msg)
+            if msg == qu then
+                endGame(v)
+            end
+        end))
+    end     
+end
+
+local function startGame(quote)
+    allowEntries()
+    if config.enterAll == false then
+        chat([[The type race will begin in ]] .. tostring(config.waitTime) .. [[ seconds. To enter, type "]] .. tostring(config.entryCommand) .. [[" into the chat now.]], true)
+    else
+        chat([[The type race will begin in ]] .. tostring(config.waitTime) .. [[ seconds. Get ready to type!]], true)
+    end
+    task.wait(.1)
+    chat("A random quote will be sent in chat, be the first one to repeat the message without any errors to win.", true)
+    task.wait(config.waitTime - 3)
+    if forceStarted then
+        return
+    end 
+    if #players < 2 and config.enterAll == false then
+        chat("Game stopped because not enough players entered.", true)
+        clearConnections()
+        return
+    end
+    chat("3 seconds remaining, get ready...")
+    task.wait(3)
+    timer = tick()
+    chat(quote, false)
+    --setclipboard(quote)
+    awaitWinner(quote)
+end
+
+--// Init
+local quote = getQuote()
+wait()
+if quote == nil then
+    quote = getQuote()
+end
+print(quote)
+
+t.insert(cons,lp.Chatted:Connect(function(msg)
+    if msg:lower() == "!forcestart" then
+        clearConnections()
+        forceStarted = true
+        task.wait(.1)
+        chat("3 seconds remaining, get ready...")
+        task.wait(3)
+        timer = tick()
+        chat(quote, false)
+        --setclipboard(quote)
+        awaitWinner(quote)
+    end
+end))
+
+startGame(quote)
