@@ -127,6 +127,20 @@ Tab:AddButton({
 })
 
 Tab:AddButton({
+	Name = "Ragdoll 2.0",
+	Callback = function()
+        loadstring(game:HttpGet(('https://raw.githubusercontent.com/Friskyyyyy/123132/main/bruhhub.lua'),true))()
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Ragdoll 3.0",
+	Callback = function()
+        loadstring(game:HttpGet(('https://raw.githubusercontent.com/Kadennnnnnnn/RagdollEngine/main/RagdollEngine'),true))()
+  	end    
+})
+
+Tab:AddButton({
 	Name = "Anti Ragdoll",
 	Callback = function()
         loadstring(game:HttpGet('https://raw.githubusercontent.com/SkrenScript/Invis/main/Anti%20Ragdoll'))()
