@@ -326,6 +326,13 @@ Tab:AddButton({
 })
 
 Tab:AddButton({
+	Name = "Stream Sniper",
+	Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Blissful4992/Miscellaneous/main/StreamSniper.lua"))()
+  	end    
+})
+
+Tab:AddButton({
 	Name = "Auto Translate",
 	Callback = function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/SkrenScript/Invis/main/Auto%20Translate"))()
@@ -495,7 +502,7 @@ Tab:AddButton({
 Tab:AddButton({
 	Name = "Hotel",
 	Callback = function()
-        loadstring(game:HttpGet('https://raw.githubusercontent.com/xFLCN/Camping/Scripts/Hotel'))();
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/xFLCN/Camping/Scripts/Hotel'))()
   	end    
 })
 
@@ -508,7 +515,7 @@ local Tab = Window:MakeTab({
 Tab:AddButton({
 	Name = "Murder Mystery 2",
 	Callback = function()
-        loadstring(game:HttpGet('https://raw.githubusercontent.com/SkrenScript/Invis/main/Murder%20Mystery'))();
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/SkrenScript/Invis/main/Murder%20Mystery'))()
   	end    
 })
 
