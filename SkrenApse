@@ -304,7 +304,7 @@ Tab:AddButton({
   	end    
 })
 
-ab:AddButton({
+Tab:AddButton({
 	Name = "Gravity",
 	Callback = function()
         loadstring(game:HttpGet('https://raw.githubusercontent.com/SkrenScript/Invis/main/Gravity'))();
@@ -512,6 +512,6 @@ Tab:AddButton({
   	end    
 })
 
-
+OrionLib:Init()
 
 
