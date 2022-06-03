@@ -1,0 +1,6 @@
+workspace.Ichbincool_kappa33.RightLowerLeg:Destroy()
+workspace.Ichbincool_kappa33.RightFoot:Destroy()
+workspace.Ichbincool_kappa33.RightUpperLeg:Destroy()
+workspace.Ichbincool_kappa33.LeftLowerLeg:Destroy()
+workspace.Ichbincool_kappa33.LeftFoot:Destroy()
+workspace.Ichbincool_kappa33.LeftUpperLeg:Destroy()
