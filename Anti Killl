@@ -1,0 +1,7 @@
+workspace.Ichbincool_kappa33.LeftHand:Destroy()
+workspace.Ichbincool_kappa33.RightHand:Destroy()
+workspace.Ichbincool_kappa33.RightLowerArm:Destroy()
+workspace.Ichbincool_kappa33.RightUpperArm:Destroy()
+workspace.Ichbincool_kappa33.LeftUpperArm:Destroy()
+workspace.Ichbincool_kappa33.LeftLowerArm:Destroy()
+
