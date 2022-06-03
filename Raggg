@@ -1,0 +1,4 @@
+workspace.JustNickiTv.RagdollMe:Destroy()
+workspace.JustNickiTv.Pushed:Destroy()
+workspace.JustNickiTv["Ragdoll fall-StarterCharacterScripts"]:Destroy()
+workspace.JustNickiTv.StartRagdoll:Destroy()
