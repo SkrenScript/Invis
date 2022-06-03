@@ -1,0 +1,5 @@
+
+workspace.Ichbincool_kappa33.RagdollMe:Destroy()
+workspace.Ichbincool_kappa33.Pushed:Destroy()
+workspace.Ichbincool_kappa33["Ragdoll fall-StarterCharacterScripts"]:Destroy()
+workspace.Ichbincool_kappa33.StartRagdoll:Destroy()
