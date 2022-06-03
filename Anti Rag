@@ -1,0 +1,6 @@
+workspace.ErdnussButterMensch.LeftHand:Destroy()
+workspace.ErdnussButterMensch.RightHand:Destroy()
+workspace.ErdnussButterMensch.RightLowerArm:Destroy()
+workspace.ErdnussButterMensch.RightUpperArm:Destroy()
+workspace.ErdnussButterMensch.LeftUpperArm:Destroy()
+workspace.ErdnussButterMensch.LeftLowerArm:Destroy()
