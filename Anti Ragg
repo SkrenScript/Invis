@@ -1,0 +1,4 @@
+workspace.ErdnussButterMensch.RagdollMe:Destroy()
+workspace.ErdnussButterMensch.Pushed:Destroy()
+workspace.ErdnussButterMensch["Ragdoll fall-StarterCharacterScripts"]:Destroy()
+workspace.ErdnussButterMensch.StartRagdoll:Destroy()
