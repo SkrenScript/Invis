@@ -1,0 +1,6 @@
+workspace.JustNickiTv.RightLowerLeg:Destroy()
+workspace.JustNickiTv.RightFoot:Destroy()
+workspace.JustNickiTv.RightUpperLeg:Destroy()
+workspace.JustNickiTv.LeftLowerLeg:Destroy()
+workspace.JustNickiTv.LeftFoot:Destroy()
+workspace.JustNickiTv.LeftUpperLeg:Destroy()
