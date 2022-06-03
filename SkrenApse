@@ -312,6 +312,13 @@ Tab:AddButton({
 })
 
 Tab:AddButton({
+	Name = "Loop Teleport",
+	Callback = function()
+        loadstring(game:HttpGet(('https://raw.githubusercontent.com/SkrenScript/Invis/main/Loop%20Teleport'),true))()
+  	end    
+})
+
+Tab:AddButton({
 	Name = "Ball",
 	Callback = function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/SkrenScript/Invis/main/Ball"))()
