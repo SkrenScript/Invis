@@ -291,6 +291,13 @@ Tab:AddButton({
   	end    
 })
 
+Tab:AddButton({
+	Name = "Aimbot",
+	Callback = function()
+        loadstring(game:HttpGet(('https://raw.githubusercontent.com/SkrenScript/Invis/main/Aimbot'),true))()
+  	end    
+})
+
 local Tab = Window:MakeTab({
 	Name = "System Scripts",
 	Icon = "rbxassetid://4483345998",
@@ -391,6 +398,19 @@ Tab:AddButton({
 	Name = "Melissa Command",
 	Callback = function()
         loadstring(game:HttpGet(('https://raw.githubusercontent.com/SkrenScript/Invis/main/Melissa%20Command'),true))()
+  	end    
+})
+
+local Tab = Window:MakeTab({
+	Name = "Evo",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+Tab:AddButton({
+	Name = "Evo 3",
+	Callback = function()
+        loadstring(game:HttpGet(('https://raw.githubusercontent.com/SkrenScript/Invis/main/Evo'),true))()
   	end    
 })
 
