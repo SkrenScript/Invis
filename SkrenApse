@@ -42,6 +42,14 @@ Tab:AddButton({
 })
 
 Tab:AddButton({
+	Name = "Alt Control",
+	Callback = function()
+        loadstring(game:HttpGet(('https://raw.githubusercontent.com/SkrenScript/Invis/main/Alt%20Control'),true))()
+  	end    
+})
+
+
+Tab:AddButton({
 	Name = "CMD-X",
 	Callback = function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/CMD-X/CMD-X/master/Source", true))()
@@ -54,6 +62,14 @@ Tab:AddButton({
         loadstring(game:HttpGet('https://raw.githubusercontent.com/SkrenScript/Invis/main/Remote%20Spy',true))()
   	end    
 })
+
+Tab:AddButton({
+	Name = "Remote Spy",
+	Callback = function()
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/SkrenScript/Invis/main/Dark%20Dex',true))()
+  	end    
+})
+
 
 Tab:AddButton({
 	Name = "Anti Fling",
