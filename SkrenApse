@@ -64,7 +64,14 @@ Tab:AddButton({
 })
 
 Tab:AddButton({
-	Name = "Remote Spy",
+	Name = "Fe Fling 2.0",
+	Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/SkrenScript/Invis/main/Fe%20Fling", true))()
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Dark Dex Explorer",
 	Callback = function()
         loadstring(game:HttpGet('https://raw.githubusercontent.com/SkrenScript/Invis/main/Dark%20Dex',true))()
   	end    
@@ -577,5 +584,3 @@ Tab:AddButton({
 })
 
 OrionLib:Init()
-
-
