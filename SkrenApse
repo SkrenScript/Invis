@@ -171,6 +171,20 @@ Tab:AddButton({
 })
 
 Tab:AddButton({
+	Name = "Anti Ban 1",
+	Callback = function()
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/SkrenScript/Invis/main/Mohamad'))()
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Anti Ban 2",
+	Callback = function()
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/SkrenScript/Invis/main/Mohamad2'))()
+  	end    
+})
+
+Tab:AddButton({
 	Name = "Push Aura",
 	Callback = function()
         loadstring(game:HttpGet('https://raw.githubusercontent.com/SkrenScript/Invis/main/Push%20Aura'))()
