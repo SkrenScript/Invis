@@ -1,0 +1,7 @@
+--Auto Leave script
+while true do
+if game.Players.Mo_11q then -- Replace "victim" with the victim roblox user, for example if you replace it with the victim full name (not display name) and you execute it in any game, if the victim joins you automatically leave the game or if you join the victim.
+    game.Players.LocalPlayer:Kick("The Victim is in the game.")
+    wait()
+   end
+end
