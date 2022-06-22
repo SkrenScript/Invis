@@ -1,0 +1,23 @@
+KillRoblox = false; -- IF TRUE WILL KILL ROBLOX CLIENT
+Listen = {
+    [1151917188] = true,
+    [783300733] = true
+};
+function SendMessage(Message)
+    game.StarterGui:SetCore("ChatMakeSystemMessage",{Text=Message,Color=Color3.fromRGB(100,0,0),Font=Enum.Font.Arcade,FontSize=Enum.FontSize.Size12});
+end
+for _,Instance in pairs(game:GetService("Players"):GetPlayers()) do
+    if Listen[Instance.UserId] then
+        SendMessage("Administrator Present.");
+    end
+end
+game:GetService("Players").PlayerAdded:Connect(function(Instance)
+    if Listen[Instance.UserId] then
+        if KillRoblox then
+            game:Shutdown();
+        else
+            game:GetService("Players").LocalPlayer:Kick("/nAdministrator Joined The Game");
+        end
+    end
+end)
+SendMessage("Anti-Administrator Active");
